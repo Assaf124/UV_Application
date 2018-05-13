@@ -104,11 +104,12 @@ def parse_list(forecast_list, *args):
             return index-1
 
 
-def get_local_time(latitude, longitude, api_key, *args):
+def get_local_time(latitude, longitude, *args):
 
     unix_time = time.time()
     LOGGER.info(f'Fetched Unix Epoch Time: {unix_time}')
 
+    api_key = app_config.GOOGLE_API_KEY
     method = 'GET'
     url = f'https://maps.googleapis.com/maps/api/timezone/json?location={latitude},{longitude}&timestamp={unix_time}&' \
           f'key={api_key}'
@@ -122,14 +123,14 @@ def get_local_time(latitude, longitude, api_key, *args):
         local_time = json.loads(http_request.data.decode('utf-8'))
         LOGGER.info(f'Received google time reply: {local_time}')
 
-        return local_time
+        return local_time['dstOffset'], local_time['rawOffset']
 
     except (Exception) as arg:
         LOGGER.error(f'An error was fetched:\n{arg}')
         raise arg
 
 
-def calculate_sun_angle(latitude):
+def calculate_sun_max_angle(latitude):
 
     RAD = math.pi/180
     EARTH_TILT = 23.43691
@@ -155,8 +156,8 @@ if __name__ == '__main__':
     LNG = 34.80715
 
     # New York
-    LAT = 40.7128
-    LNG = -74.0061
+    # LAT = 40.7128
+    # LNG = -74.0061
 
     # Singapore
     LAT = 1.3521
@@ -167,4 +168,6 @@ if __name__ == '__main__':
     # cloud_coverage, solar = get_cloud_coverage(LAT, LNG, access_token)
     # print(f'{cloud_coverage} , {solar}')
 
-    print(get_local_time(LAT, LNG, 'AIzaSyDRZy0h1Tl5Q1CCctsjysXDt7itqS9-UJQ'))
+    print(get_local_time(LAT, LNG))
+    time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))
+    print(datetime.datetime.utcnow())

@@ -41,7 +41,7 @@ for pair in coordinates:
     LOGGER.info(f'Received cloud coverage value: {cloud_coverage}')
     LOGGER.info(f'Received Solar amount value: {solar}')
 
-    sun_angle = data.calculate_sun_angle(LAT)
+    sun_angle = data.calculate_sun_max_angle(LAT)
 
     csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time,
                               LAT, LNG, uv_risk[0], uv_risk[1], uv_risk[2],
