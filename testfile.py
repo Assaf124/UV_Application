@@ -91,3 +91,4 @@ if __name__ == '__main__':
 
     daylength = sun.getSunsetTime(coords)['decimal'] - sun.getSunriseTime(coords)['decimal']
     print(daylength)
+    print('helloooo')
