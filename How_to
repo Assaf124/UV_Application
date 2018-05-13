@@ -1,0 +1,152 @@
+Microsoft Windows [Version 10.0.16299.431]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Users\assafa>
+C:\Users\assafa>
+C:\Users\assafa>
+C:\Users\assafa>git checkout git@github.com:Assaf124/UV_Application.git
+fatal: Not a git repository (or any of the parent directories): .git
+
+C:\Users\assafa>git clone https://github.com/Assaf124/UV_Application.git
+Cloning into 'UV_Application'...
+warning: You appear to have cloned an empty repository.
+
+C:\Users\assafa>ll
+'ll' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\assafa>l
+'l' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\assafa>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 9415-1B29
+
+ Directory of C:\Users\assafa
+
+05/13/2018  10:29 AM    <DIR>          .
+05/13/2018  10:29 AM    <DIR>          ..
+02/06/2018  07:19 PM    <DIR>          .android
+02/06/2018  06:59 PM    <DIR>          .AndroidStudio3.0
+04/18/2018  12:45 PM                53 .gitconfig
+01/01/2018  07:12 PM    <DIR>          .idlerc
+01/01/2018  12:04 PM    <DIR>          .PyCharmCE2017.3
+02/26/2018  03:14 PM    <DIR>          .ssh
+02/26/2018  03:14 PM               961 .viminfo
+05/13/2018  08:04 AM    <DIR>          3D Objects
+05/13/2018  08:04 AM    <DIR>          Contacts
+05/13/2018  08:04 AM    <DIR>          Desktop
+05/13/2018  08:04 AM    <DIR>          Documents
+05/13/2018  08:04 AM    <DIR>          Downloads
+02/26/2018  03:16 PM    <DIR>          equus
+05/13/2018  08:04 AM    <DIR>          Favorites
+05/13/2018  08:04 AM    <DIR>          Links
+05/13/2018  08:04 AM    <DIR>          Music
+04/30/2018  10:43 AM    <DIR>          OneDrive
+05/13/2018  08:04 AM    <DIR>          Pictures
+04/29/2018  02:52 PM               600 PUTTY.RND
+03/22/2018  07:28 PM    <DIR>          PycharmProjects
+05/13/2018  08:04 AM    <DIR>          Saved Games
+05/13/2018  08:04 AM    <DIR>          Searches
+05/13/2018  10:29 AM    <DIR>          UV_Application
+05/13/2018  08:04 AM    <DIR>          Videos
+               3 File(s)          1,614 bytes
+              23 Dir(s)  370,643,390,464 bytes free
+
+C:\Users\assafa>cd UV_Application
+
+C:\Users\assafa\UV_Application>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 9415-1B29
+
+ Directory of C:\Users\assafa\UV_Application
+
+05/13/2018  10:29 AM    <DIR>          .
+05/13/2018  10:29 AM    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  370,643,456,000 bytes free
+
+C:\Users\assafa\UV_Application>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Sun.py
+        app_config.py
+        coordinates.json
+        csv.py
+        data.py
+        logger.py
+        parse_coordinates.py
+        testfile.py
+        uv_vs_clouds.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\assafa\UV_Application>git add .
+
+C:\Users\assafa\UV_Application>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   Sun.py
+        new file:   app_config.py
+        new file:   coordinates.json
+        new file:   csv.py
+        new file:   data.py
+        new file:   logger.py
+        new file:   parse_coordinates.py
+        new file:   testfile.py
+        new file:   uv_vs_clouds.py
+
+
+C:\Users\assafa\UV_Application>git commit
+[master (root-commit) 3333bf5] Adding initial files to github project.
+ Committer: Assaf Aloni <assafa@merlinx.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 9 files changed, 549 insertions(+)
+ create mode 100644 Sun.py
+ create mode 100644 app_config.py
+ create mode 100644 coordinates.json
+ create mode 100644 csv.py
+ create mode 100644 data.py
+ create mode 100644 logger.py
+ create mode 100644 parse_coordinates.py
+ create mode 100644 testfile.py
+ create mode 100644 uv_vs_clouds.py
+
+C:\Users\assafa\UV_Application>git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+
+C:\Users\assafa\UV_Application>git push
+Counting objects: 11, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 6.71 KiB | 2.24 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0)
+To https://github.com/Assaf124/UV_Application.git
+ * [new branch]      master -> master
+
+C:\Users\assafa\UV_Application>
