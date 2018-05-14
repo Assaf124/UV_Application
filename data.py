@@ -123,7 +123,12 @@ def get_local_time(latitude, longitude, *args):
         local_time = json.loads(http_request.data.decode('utf-8'))
         LOGGER.info(f'Received google time reply: {local_time}')
 
-        return local_time['dstOffset'], local_time['rawOffset']
+        total_time_offset = local_time['dstOffset'] + local_time['rawOffset']
+        actual_local_time = unix_time + total_time_offset
+
+        local_time_human_format = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(actual_local_time))
+
+        return local_time_human_format
 
     except (Exception) as arg:
         LOGGER.error(f'An error was fetched:\n{arg}')
@@ -145,11 +150,11 @@ def calculate_sun_max_angle(latitude):
 
 if __name__ == '__main__':
 
-    current_local_time = datetime.datetime.now()
-    print(current_local_time)
-
-    current_hour = current_hour = datetime.datetime.now().hour
-    print(current_hour)
+    # current_local_time = datetime.datetime.now()
+    # print(current_local_time)
+    #
+    # current_hour = current_hour = datetime.datetime.now().hour
+    # print(current_hour)
 
     # Herzeliya
     LAT = 32.15922
@@ -163,11 +168,23 @@ if __name__ == '__main__':
     LAT = 1.3521
     LNG = 103.8198
 
+    # Sydney
+    # LAT = -33.8688
+    # LNG = 151.2093
+
+    # Lisbon
+    # LAT = 38.7223
+    # LNG = -9.1993
+
+    # Beijing
+    LAT = 39.9042
+    LNG = 116.4074
+
     # uv_risk = get_uv_risk(LAT, LNG, 'x-access-token', '92096e5152c61f0d3f5c64a3e89fa55e')
     # access_token = get_token_for_clouds_coverage()
     # cloud_coverage, solar = get_cloud_coverage(LAT, LNG, access_token)
     # print(f'{cloud_coverage} , {solar}')
 
     print(get_local_time(LAT, LNG))
-    time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))
-    print(datetime.datetime.utcnow())
+
+    # print(datetime.datetime.utcnow())

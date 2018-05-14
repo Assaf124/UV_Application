@@ -21,7 +21,6 @@ csv.create_csv_file(CSV_FILE_DIR, CSV_FILE_NAME)
 
 
 # Main program starts here
-current_local_time = datetime.datetime.now()
 
 
 # loading Latitude and Longitude coordinates
@@ -30,6 +29,8 @@ coordinates = parse_coordinates.load_coordinates()
 for pair in coordinates:
     LAT = pair["lat"]
     LNG = pair["lon"]
+
+    current_local_time = data.get_local_time(LAT, LNG)
 
     uv_risk = data.get_uv_risk(LAT, LNG, 'x-access-token')
     LOGGER.info(f'Received uv risk values: {uv_risk}')
