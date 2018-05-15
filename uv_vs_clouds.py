@@ -30,6 +30,8 @@ for pair in coordinates:
     LAT = pair["lat"]
     LNG = pair["lon"]
 
+    LOGGER.info(f'** New loop cycle started for latitude: {LAT} and longitude: {LNG} **\n')
+
     current_local_time, local_time_unix_format, time_offset = data.get_local_time(LAT, LNG)
 
     location = data.get_location(LAT)

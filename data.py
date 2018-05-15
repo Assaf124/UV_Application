@@ -20,8 +20,10 @@ def get_location(latitude, *args):
 
     for key, value in location_dict.items():
         if value == latitude:
+            LOGGER.info(f'Found location for given latitude: {key}')
             return key
 
+    LOGGER.warning('Did not find location for given latitude')
     return None
 
 
@@ -119,7 +121,7 @@ def parse_list(forecast_list, *args):
 def get_local_time(latitude, longitude, *args):
 
     unix_time = time.time()
-    LOGGER.info(f'Fetched Unix Epoch Time: {unix_time}')
+    LOGGER.info(f'Fetched Unix (Epoch) Time: {unix_time}')
 
     api_key = app_config.GOOGLE_API_KEY
     method = 'GET'
@@ -180,7 +182,7 @@ def calculate_sun_angle(latitude, longitude, local_time_unix_format, time_offset
     LOGGER.info(f'Calculated day length: {daylength}')
 
     daylength_seconds = daylength * 3600
-    print(daylength, daylength_seconds)
+    # print(daylength, daylength_seconds)
 
 
     return sun_max_angle
