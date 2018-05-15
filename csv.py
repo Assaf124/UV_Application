@@ -3,7 +3,7 @@ import logging
 import logger
 
 
-logger.init_logger()
+# logger.init_logger()
 LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.DEBUG)
 
@@ -31,12 +31,11 @@ def add_entry_to_csv_file(csv_file_dir, file_name, current_local_time, location,
     LOGGER.info(f'add_entry function was called with parameters: {csv_file_dir}, {file_name}')
     path = os.path.join(csv_file_dir, file_name)
     file = open(path, "a")
-    # file.write('Time, Latitude, Longitude, st2, st3, st4, Clouds Coverage\n')
-    file.write('{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}\n'.format(current_local_time, location, LAT, LNG,
-                                                                             uv_risk1, uv_risk2, uv_risk3, uv_risk4,
-                                                                             uv_risk5, uv_risk6, cloud_coverage, solar,
-                                                                             angle))
+
+    file.write(f'{current_local_time}, {location}, {LAT}, {LNG}, {uv_risk1}, {uv_risk2}, {uv_risk3}, {uv_risk4}, '
+               f'{uv_risk5}, {uv_risk6}, {cloud_coverage}, {solar}, {angle}\n')
+
     file.close()
-    LOGGER.info('Add entry to csv file')
+    LOGGER.info('Added entry to csv file')
 
     return

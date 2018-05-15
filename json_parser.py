@@ -4,7 +4,7 @@ import logging
 import logger
 
 
-logger.init_logger()
+# logger.init_logger()
 LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.DEBUG)
 
