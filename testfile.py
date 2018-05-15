@@ -6,7 +6,7 @@ import json
 import datetime
 import data
 import csv
-import parse_coordinates
+import json_parser
 import math
 import time
 from Sun import Sun
@@ -44,6 +44,14 @@ if __name__ == '__main__':
     # Herzeliya
     LAT = 32.15922
     LNG = 34.80715
+
+    # Milan
+    LAT = 45.4642
+    LNG = 9.1901
+
+    # Odesa
+    LAT = 46.4825
+    LNG = 30.7233
 
     # New York
     # LAT = 40.7128
@@ -112,12 +120,8 @@ if __name__ == '__main__':
     #
     # daylength = sun.get_sunset_time(LAT, LNG)['decimal'] - sun.get_sunrise_time(LAT, LNG)['decimal']
     # print(daylength)
-    #
-    #
-    #
-    # print(datetime.datetime.utcnow())
-    #
-    # data.get_local_time(LAT, LNG)        #   dstOffset and rawOffset are given in seconds
 
-    print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1526310489.7946904)))
 
+
+    # location = data.get_location(latitude)
+    print(data.get_location(latitude))

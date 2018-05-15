@@ -6,11 +6,22 @@ import datetime
 import logging
 import logger
 import math
+import json_parser
 
 
 logger.init_logger()
 LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.DEBUG)
+
+
+def get_location(latitude, *args):
+    location_dict = json_parser.load_locations()
+
+    for key, value in location_dict.items():
+        if value == latitude:
+            return key
+
+    return None
 
 
 def get_uv_risk(latitude, longitude, header_name, *args):
@@ -150,41 +161,26 @@ def calculate_sun_max_angle(latitude):
 
 if __name__ == '__main__':
 
-    # current_local_time = datetime.datetime.now()
-    # print(current_local_time)
-    #
-    # current_hour = current_hour = datetime.datetime.now().hour
-    # print(current_hour)
-
     # Herzeliya
     LAT = 32.15922
     LNG = 34.80715
 
     # New York
-    # LAT = 40.7128
-    # LNG = -74.0061
+    LAT = 40.7128
+    LNG = -74.0061
 
     # Singapore
     LAT = 1.3521
     LNG = 103.8198
 
     # Sydney
-    # LAT = -33.8688
-    # LNG = 151.2093
+    LAT = -33.8688
+    LNG = 151.2093
 
     # Lisbon
-    # LAT = 38.7223
-    # LNG = -9.1993
+    LAT = 38.7223
+    LNG = -9.1993
 
     # Beijing
     LAT = 39.9042
     LNG = 116.4074
-
-    # uv_risk = get_uv_risk(LAT, LNG, 'x-access-token', '92096e5152c61f0d3f5c64a3e89fa55e')
-    # access_token = get_token_for_clouds_coverage()
-    # cloud_coverage, solar = get_cloud_coverage(LAT, LNG, access_token)
-    # print(f'{cloud_coverage} , {solar}')
-
-    print(get_local_time(LAT, LNG))
-
-    # print(datetime.datetime.utcnow())

@@ -4,7 +4,7 @@ import logger
 import datetime
 import data
 import csv
-import parse_coordinates
+import json_parser
 
 
 # Initializing the logger
@@ -24,13 +24,15 @@ csv.create_csv_file(CSV_FILE_DIR, CSV_FILE_NAME)
 
 
 # loading Latitude and Longitude coordinates
-coordinates = parse_coordinates.load_coordinates()
+coordinates = json_parser.load_coordinates()
 
 for pair in coordinates:
     LAT = pair["lat"]
     LNG = pair["lon"]
 
     current_local_time = data.get_local_time(LAT, LNG)
+
+    location = data.get_location(LAT)
 
     uv_risk = data.get_uv_risk(LAT, LNG, 'x-access-token')
     LOGGER.info(f'Received uv risk values: {uv_risk}')
@@ -44,8 +46,8 @@ for pair in coordinates:
 
     sun_angle = data.calculate_sun_max_angle(LAT)
 
-    csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time,
+    csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time, location,
                               LAT, LNG, uv_risk[0], uv_risk[1], uv_risk[2],
                               uv_risk[3], uv_risk[4], uv_risk[5],cloud_coverage, solar, sun_angle)
 
-    print(current_local_time, uv_risk, cloud_coverage, solar, sun_angle)
+    # print(current_local_time, uv_risk, cloud_coverage, solar, sun_angle)
