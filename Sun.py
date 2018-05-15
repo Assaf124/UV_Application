@@ -41,7 +41,7 @@ class Sun:
         L = self.forceRange( L, 360 ) #NOTE: L adjusted into the range [0,360)
 
         #5a. calculate the Sun's right ascension
-        RA = (1/TO_RAD) * math.atan(0.91764 * math.tan(TO_RAD*L))
+        RA = (1/TO_RAD) * math.atan(0.91764 * math.tan(TO_RAD * L))
         RA = self.forceRange( RA, 360 ) #NOTE: RA adjusted into the range [0,360)
 
         #5b. right ascension value needs to be in the same quadrant as L
