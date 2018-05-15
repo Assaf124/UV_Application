@@ -30,7 +30,7 @@ for pair in coordinates:
     LAT = pair["lat"]
     LNG = pair["lon"]
 
-    current_local_time = data.get_local_time(LAT, LNG)
+    current_local_time, local_time_unix_format, time_offset = data.get_local_time(LAT, LNG)
 
     location = data.get_location(LAT)
 
@@ -44,7 +44,7 @@ for pair in coordinates:
     LOGGER.info(f'Received cloud coverage value: {cloud_coverage}')
     LOGGER.info(f'Received Solar amount value: {solar}')
 
-    sun_angle = data.calculate_sun_max_angle(LAT)
+    sun_angle = data.calculate_sun_angle(LAT, LNG, local_time_unix_format, time_offset)
 
     csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time, location,
                               LAT, LNG, uv_risk[0], uv_risk[1], uv_risk[2],

@@ -7,6 +7,7 @@ import logging
 import logger
 import math
 import json_parser
+from Sun import Sun
 
 
 # logger.init_logger()
@@ -139,7 +140,7 @@ def get_local_time(latitude, longitude, *args):
 
         local_time_human_format = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(actual_local_time))
 
-        return local_time_human_format
+        return local_time_human_format, actual_local_time, total_time_offset
 
     except (Exception) as arg:
         LOGGER.error(f'An error was fetched:\n{arg}')
@@ -154,9 +155,35 @@ def calculate_sun_max_angle(latitude):
     day_of_year = time.localtime().tm_yday
 
     DELTA = EARTH_TILT * RAD * math.sin(RAD * (360 / 365.2425) * (284 + day_of_year))
-    NOON_ANGLE = 90 - latitude + math.degrees(DELTA)
+    sun_max_angle = 90 - latitude + math.degrees(DELTA)
 
-    return NOON_ANGLE
+    LOGGER.info(f'Calculated sun max angle: {sun_max_angle}')
+
+    return sun_max_angle
+
+
+def calculate_sun_angle(latitude, longitude, local_time_unix_format, time_offset, *args):
+    sun_max_angle = calculate_sun_max_angle(latitude)
+
+    time_offset_hours = time_offset/3600
+    sun = Sun()
+
+    sunrise_hour = math.floor(sun.get_sunrise_time(latitude, longitude)['decimal'] + time_offset_hours)
+    sunrise_minutes = 60*(sun.get_sunrise_time(latitude, longitude)['decimal'] + time_offset_hours - sunrise_hour)
+    LOGGER.info(f'Sunrise value: {sunrise_hour}:{sunrise_minutes}')
+
+    sunset_hour = math.floor(sun.get_sunset_time(latitude, longitude)['decimal'] + time_offset_hours)
+    sunset_minutes = 60*(sun.get_sunset_time(latitude, longitude)['decimal'] + time_offset_hours - sunset_hour)
+    LOGGER.info(f'Sunset value: {sunset_hour}:{sunset_minutes}')
+
+    daylength = sun.get_sunset_time(latitude, longitude)['decimal'] - sun.get_sunrise_time(latitude, longitude)['decimal']
+    LOGGER.info(f'Calculated day length: {daylength}')
+
+    daylength_seconds = daylength * 3600
+    print(daylength, daylength_seconds)
+
+
+    return sun_max_angle
 
 
 if __name__ == '__main__':

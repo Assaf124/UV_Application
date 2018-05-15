@@ -102,26 +102,20 @@ if __name__ == '__main__':
 
 
 
+    sun = Sun()
+    LOCAL_TIME_OFFSET = 3
+    # Sunrise time UTC (decimal, 24 hour format)
 
+    sunrise_hour = math.floor(sun.get_sunrise_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET)
+    sunrise_minutes = 60*(sun.get_sunrise_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET - sunrise_hour)
+    print(f'{sunrise_hour}:{int(sunrise_minutes)}')
 
+    # Sunset time UTC (decimal, 24 hour format)
+    sunset_hour = math.floor(sun.get_sunset_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET)
+    sunset_minutes = 60*(sun.get_sunset_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET - sunset_hour)
+    print(f'{sunset_hour}:{int(sunset_minutes)}')
 
-    # sun = Sun()
-    # LOCAL_TIME_OFFSET = 3
-    # # Sunrise time UTC (decimal, 24 hour format)
-    #
-    # sunrise_hour = math.floor(sun.get_sunrise_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET)
-    # sunrise_minutes = 60*(sun.get_sunrise_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET - sunrise_hour)
-    # print(f'{sunrise_hour}:{int(sunrise_minutes)}')
-    #
-    # # Sunset time UTC (decimal, 24 hour format)
-    # sunset_hour = math.floor(sun.get_sunset_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET)
-    # sunset_minutes = 60*(sun.get_sunset_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET - sunset_hour)
-    # print(f'{sunset_hour}:{int(sunset_minutes)}')
-    #
-    # daylength = sun.get_sunset_time(LAT, LNG)['decimal'] - sun.get_sunrise_time(LAT, LNG)['decimal']
-    # print(daylength)
+    daylength = sun.get_sunset_time(LAT, LNG)['decimal'] - sun.get_sunrise_time(LAT, LNG)['decimal']
+    print(daylength)
 
-
-
-    # location = data.get_location(latitude)
-    print(data.get_location(latitude))
+    half_day_length = daylength/2
