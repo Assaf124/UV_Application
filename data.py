@@ -20,7 +20,7 @@ def get_location(latitude, *args):
 
     for key, value in location_dict.items():
         if value == latitude:
-            LOGGER.info(f'Found location for given latitude: {key}')
+            LOGGER.info(f'Found location for a given latitude: {key}')
             return key
 
     LOGGER.warning('Did not find location for given latitude')
@@ -45,9 +45,12 @@ def get_uv_risk(latitude, longitude, header_name, *args):
 
         uv_dict = reply['result']['safe_exposure_time']
         uv_list = list(uv_dict.values())
-        LOGGER.info(f'Returning uv values: {uv_list}')
+        LOGGER.info(f'Returning U.V values: {uv_list}')
 
-        return uv_list
+        ozone_value = reply['result']['ozone']
+        LOGGER.info(f'Returning Ozone value: {ozone_value}')
+
+        return uv_list, ozone_value
 
     except Exception as arg:
         LOGGER.error(f'An error was fetched:\n{arg}')
@@ -121,7 +124,7 @@ def parse_list(forecast_list, *args):
 def get_local_time(latitude, longitude, *args):
 
     unix_time = time.time()
-    LOGGER.info(f'Fetched Unix (Epoch) Time: {unix_time}')
+    LOGGER.info(f'Fetched Unix (Epoch) Time UTC: {unix_time}')
 
     api_key = app_config.GOOGLE_API_KEY
     method = 'GET'
@@ -139,8 +142,10 @@ def get_local_time(latitude, longitude, *args):
 
         total_time_offset = local_time['dstOffset'] + local_time['rawOffset']
         actual_local_time = unix_time + total_time_offset
+        LOGGER.info(f'Got local time Unix format: {actual_local_time}')
 
         local_time_human_format = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(actual_local_time))
+        LOGGER.info(f'Got local time human format: {local_time_human_format}')
 
         return local_time_human_format, actual_local_time, total_time_offset
 

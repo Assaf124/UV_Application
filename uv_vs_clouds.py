@@ -36,8 +36,9 @@ for pair in coordinates:
 
     location = data.get_location(LAT)
 
-    uv_risk = data.get_uv_risk(LAT, LNG, 'x-access-token')
+    uv_risk, ozone = data.get_uv_risk(LAT, LNG, 'x-access-token')
     LOGGER.info(f'Received uv risk values: {uv_risk}')
+    LOGGER.info(f'Received Ozone values: {ozone}')
 
     access_token = data.get_token_for_clouds_coverage()
     LOGGER.info(f'Received access token for cloud coverage: {access_token}')
@@ -48,8 +49,8 @@ for pair in coordinates:
 
     sun_angle = data.calculate_sun_angle(LAT, LNG, local_time_unix_format, time_offset)
 
-    csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time, location,
-                              LAT, LNG, uv_risk[0], uv_risk[1], uv_risk[2],
-                              uv_risk[3], uv_risk[4], uv_risk[5],cloud_coverage, solar, sun_angle)
+    csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time, location, LAT, LNG, uv_risk[0],
+                              uv_risk[1], uv_risk[2], uv_risk[3], uv_risk[4], uv_risk[5],ozone, cloud_coverage,
+                              solar, sun_angle)
 
     # print(current_local_time, uv_risk, cloud_coverage, solar, sun_angle)
