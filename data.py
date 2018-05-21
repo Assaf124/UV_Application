@@ -16,6 +16,9 @@ LOGGER.setLevel(logging.DEBUG)
 
 
 def get_location(latitude, *args):
+    """ This function returns a location name (usually a city)
+        which corresponds to a given latitude   """
+
     location_dict = json_parser.load_locations()
 
     for key, value in location_dict.items():
@@ -28,6 +31,8 @@ def get_location(latitude, *args):
 
 
 def get_uv_risk(latitude, longitude, *args):
+    """ This function returns the uv risk which correspond to skin type 1 to 6
+        (returned as a list) and the Ozone value which returned as an integer   """
 
     method = 'GET'
     header_name = app_config.OPENUV_HEADER
@@ -123,6 +128,10 @@ def parse_list(forecast_list, *args):
 
 
 def get_local_time(latitude, longitude, *args):
+    """ This function returns the local time based on latitude and longitude values.
+        First we get the Unix UTC time. Then we get from google the offset time for a given
+        location based on its latitude and longitude values. Finally we calculate the local time
+        based on UTC + offset value.    """
 
     unix_time = time.time()
     LOGGER.info(f'Fetched Unix (Epoch) Time UTC: {unix_time}')
