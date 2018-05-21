@@ -1,6 +1,7 @@
 import os
 
 
+OPENUV_HEADER = 'x-access-token'
 OPENUV_TOKEN = '92096e5152c61f0d3f5c64a3e89fa55e'
 NOAA_TOKEN = 'IErLDmdrwFDWwXGWagebjjYVlOSsvmqV'
 GOOGLE_API_KEY = 'AIzaSyDRZy0h1Tl5Q1CCctsjysXDt7itqS9-UJQ'

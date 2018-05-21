@@ -27,9 +27,10 @@ def get_location(latitude, *args):
     return None
 
 
-def get_uv_risk(latitude, longitude, header_name, *args):
+def get_uv_risk(latitude, longitude, *args):
 
     method = 'GET'
+    header_name = app_config.OPENUV_HEADER
     token_value = app_config.OPENUV_TOKEN
     url = 'http://api.openuv.io/api/v1/uv?lat={}&lng={}'.format(latitude, longitude)
     dict_headers = {header_name: token_value}

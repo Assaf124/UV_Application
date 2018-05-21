@@ -36,7 +36,7 @@ for pair in coordinates:
 
     location = data.get_location(LAT)
 
-    uv_risk, ozone = data.get_uv_risk(LAT, LNG, 'x-access-token')
+    uv_risk, ozone = data.get_uv_risk(LAT, LNG)
     LOGGER.info(f'Received uv risk values: {uv_risk}')
     LOGGER.info(f'Received Ozone values: {ozone}')
 
