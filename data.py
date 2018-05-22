@@ -16,8 +16,10 @@ LOGGER.setLevel(logging.DEBUG)
 
 
 def get_location(latitude, *args):
-    """ This function returns a location name (usually a city)
-        which corresponds to a given latitude   """
+    """
+    This function returns a location name (usually a city)
+    which corresponds to a given latitude
+    """
 
     location_dict = json_parser.load_locations()
 
@@ -31,8 +33,10 @@ def get_location(latitude, *args):
 
 
 def get_uv_risk(latitude, longitude, *args):
-    """ This function returns the uv risk which correspond to skin type 1 to 6
-        (returned as a list) and the Ozone value which returned as an integer   """
+    """
+    This function returns the uv risk which correspond to skin type 1 to 6
+    (returned as a list) and the Ozone value which returned as an integer
+    """
 
     method = 'GET'
     header_name = app_config.OPENUV_HEADER
@@ -64,6 +68,10 @@ def get_uv_risk(latitude, longitude, *args):
 
 
 def get_token_for_clouds_coverage(*args):
+    """
+    The api.awhere.com site required a token. This function gets the token which would
+    be used later on in the get_cloud_coverage function which required the token
+    """
 
     method = 'POST'
     url = 'https://api.awhere.com/oauth/token'
@@ -88,6 +96,10 @@ def get_token_for_clouds_coverage(*args):
 
 
 def get_cloud_coverage(latitude, longitude, token, *args):
+    """
+    This function returns both the cloud coverage (based on  latitude and longitude)
+    and the Solar amount
+    """
 
     return 54.3, 732    #   remove this
     today = time.strftime("%Y-%m-%d", time.gmtime())
@@ -128,10 +140,12 @@ def parse_list(forecast_list, *args):
 
 
 def get_local_time(latitude, longitude, *args):
-    """ This function returns the local time based on latitude and longitude values.
-        First we get the Unix UTC time. Then we get from google the offset time for a given
-        location based on its latitude and longitude values. Finally we calculate the local time
-        based on UTC + offset value.    """
+    """
+    This function returns the local time based on latitude and longitude values.
+    First we get the Unix UTC time. Then we get from google the offset time for a given
+    location based on its latitude and longitude values. Finally we calculate the local time
+    based on UTC + offset value.
+    """
 
     unix_time = time.time()
     LOGGER.info(f'Fetched Unix (Epoch) Time UTC: {unix_time}')
@@ -165,6 +179,10 @@ def get_local_time(latitude, longitude, *args):
 
 
 def calculate_sun_max_angle(latitude):
+    """
+    This function calculates the Sun maximum angle in the sky based on
+    given latitude and the day of the year
+    """
 
     RAD = math.pi/180
     EARTH_TILT = 23.43691
@@ -180,6 +198,11 @@ def calculate_sun_max_angle(latitude):
 
 
 def calculate_sun_angle(latitude, longitude, local_time_unix_format, time_offset, *args):
+    """
+    This function calculates the Sun actual angle in the sky based on latitude, longitude
+    and local time
+    """
+
     sun_max_angle = calculate_sun_max_angle(latitude)
 
     time_offset_hours = time_offset/3600
