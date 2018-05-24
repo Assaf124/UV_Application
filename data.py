@@ -24,7 +24,6 @@ def get_location(latitude, *args):
 
     Returns:
         key:    A name of a location (City) taken from locations.json
-        None:   In case no location was found
     """
 
     location_dict = json_parser.load_locations()
@@ -289,6 +288,7 @@ def calculate_sun_angle(latitude, longitude, local_time_unix_format, time_offset
     LOGGER.info(f'Sunset value: {sunset_hour}:{sunset_minutes}')
 
     daylength = sun.get_sunset_time(latitude, longitude)['decimal'] - sun.get_sunrise_time(latitude, longitude)['decimal']
+    daylength_in_minutes = daylength * 60
     LOGGER.info(f'Calculated day length: {daylength} hours')
 
     local_time_in_minutes = extract_minutes_from_timestamp(get_local_time(latitude, longitude)[0], True)
@@ -309,11 +309,18 @@ def calculate_sun_angle(latitude, longitude, local_time_unix_format, time_offset
         LOGGER.info(f'local_time_in_minutes > sunset_in_minutes. It is night')
 
     else:
-        m = (local_time_in_minutes - sunrise_in_minutes) / daylength
+        m = (local_time_in_minutes - sunrise_in_minutes) / (daylength_in_minutes / 2)
+        if m <= 1:
+            sun_angle = sun_max_angle * m
 
+        else:
+            n = (local_time_in_minutes - sunrise_in_minutes) - (daylength_in_minutes / 2)
+            a = (daylength_in_minutes / 2) - n
+            b = a / (daylength_in_minutes / 2)
+            sun_angle = sun_max_angle * b
 
-
-    return sun_max_angle
+    LOGGER.info(f'Calculated sun angle is: {sun_angle}')
+    return sun_angle
 
 
 def extract_minutes_from_timestamp(timestamp, flag):
