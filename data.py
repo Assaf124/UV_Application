@@ -232,6 +232,16 @@ def calculate_sun_max_angle(latitude):
     """
     This function calculates the Sun maximum angle in the sky based on
     given latitude and the day of the year
+
+    Args:
+        latitude:   Integer. the latitude of the given location
+
+    Returns:
+        sun_max_angle:  Integer. The sun maximum angle in the sky for a
+                        given day in accordance with the given latitude
+
+    Raises:
+        Exception:     Raises an exception.
     """
 
     RAD = math.pi/180
@@ -251,6 +261,18 @@ def calculate_sun_angle(latitude, longitude, local_time_unix_format, time_offset
     """
     This function calculates the Sun actual angle in the sky based on latitude, longitude
     and local time
+
+    Args:
+        latitude:               Integer. the latitude of the given location
+        longitude:              Integer. the longitude of the given location
+        local_time_unix_format: Integer.
+        time_offset:            Integer.
+
+    Returns:
+        sun_angle:  Integer. The sun actual angle in the sky.
+
+    Raises:
+        Exception:     Raises an exception.
     """
 
     sun_max_angle = calculate_sun_max_angle(latitude)
