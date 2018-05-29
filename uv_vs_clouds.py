@@ -25,6 +25,7 @@ csv.create_csv_file(CSV_FILE_DIR, CSV_FILE_NAME)
 
 # loading Latitude and Longitude coordinates
 coordinates = json_parser.load_coordinates()
+locations_list = data.load_locations()
 
 for pair in coordinates:
     LAT = pair["lat"]

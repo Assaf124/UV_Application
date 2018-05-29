@@ -40,6 +40,15 @@ def get_noaa_data(*args):
         raise arg
 
 
+def load_coordinates_new(*args):
+
+    json_path = app_config.ALT_COORDINATES_FILE_PATH
+    json_data = json.load(open(json_path))
+    # LOGGER.info(f'Loaded coordinates data from file: {json_data}')
+
+    return json_data['coordinates']
+
+
 if __name__ == '__main__':
     # Herzeliya
     LAT = 32.15922
@@ -61,62 +70,26 @@ if __name__ == '__main__':
     # LAT = 1.3521
     # LNG = 103.8198
 
-    latitude = LAT
-    longitude = LNG
-
-    # reply = get_noaa_data()
-    # print(reply)
-
-    # day_of_year = time.localtime().tm_yday
-    # print(day_of_year)
-
-    # RAD = math.pi/180
-    # EARTH_TILT = 23.43691
+    # location = 'uk/london'
+    # method = 'GET'
+    # url = f'https://www.timeanddate.com/sun/{location}'
     #
-    # print(LAT)
+    # http = urllib3.PoolManager()
+    # http_request = http.request(method, url)
     #
-    # for day_of_year in range(1,366):
-    #     LAMBDA = EARTH_TILT * RAD * math.sin(RAD*(360/365.2425)*(284 + day_of_year))
-    #     NOON_ANGLE = 90 - LAT + math.degrees(LAMBDA)
-    #     print(day_of_year, math.degrees(LAMBDA), NOON_ANGLE)
-
-
-
-    # coords = {'longitude': LNG, 'latitude': LAT}
+    # reply = http_request.data.decode('utf-8')
     #
-    # sun = Sun()
-    # LOCAL_TIME_OFFSET = 3
-    # # Sunrise time UTC (decimal, 24 hour format)
+    # 'Sun Altitude: </span><span id=sunalt>50.8°</span></p>'
     #
-    # sunrise_hour = math.floor(sun.get_sunrise_time(coords)['decimal'] + LOCAL_TIME_OFFSET)
-    # sunrise_minutes = 60*(sun.get_sunrise_time(coords)['decimal'] + LOCAL_TIME_OFFSET - sunrise_hour)
-    # print(f'{sunrise_hour}:{int(sunrise_minutes)}')
-    #
-    # # Sunset time UTC (decimal, 24 hour format)
-    # sunset_hour = math.floor(sun.get_sunset_time(coords)['decimal'] + LOCAL_TIME_OFFSET)
-    # sunset_minutes = 60*(sun.get_sunset_time(coords)['decimal'] + LOCAL_TIME_OFFSET - sunset_hour)
-    # print(f'{sunset_hour}:{int(sunset_minutes)}')
-    #
-    # daylength = sun.get_sunset_time(coords)['decimal'] - sun.get_sunrise_time(coords)['decimal']
-    # print(daylength)
+    # reply_split_1 = reply.split('<span id=sunalt>')
+    # reply_split_2 = reply_split_1[1].split('</span></p><p>')
+    # print(f'Sun altitude: {reply_split_2[0]}')
 
+    coordinates = load_coordinates_new()
 
-
-    sun = Sun()
-    LOCAL_TIME_OFFSET = 3
-    # Sunrise time UTC (decimal, 24 hour format)
-
-    # sunrise_hour = math.floor(sun.get_sunrise_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET)
-    # sunrise_minutes = 60*(sun.get_sunrise_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET - sunrise_hour)
-    # print(f'{sunrise_hour}:{int(sunrise_minutes)}')
-    #
-    # # Sunset time UTC (decimal, 24 hour format)
-    # sunset_hour = math.floor(sun.get_sunset_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET)
-    # sunset_minutes = 60*(sun.get_sunset_time(LAT, LNG)['decimal'] + LOCAL_TIME_OFFSET - sunset_hour)
-    # print(f'{sunset_hour}:{int(sunset_minutes)}')
-    #
-    # daylength = sun.get_sunset_time(LAT, LNG)['decimal'] - sun.get_sunrise_time(LAT, LNG)['decimal']
-    # print(daylength)
-    #
-    # half_day_length = daylength/2
-
+    for item in coordinates:
+        LAT = item["lat"]
+        LNG = item["lon"]
+        COUNTRY = item["Main Place"]
+        CITY = item["Place"]
+        print(LAT, LNG, COUNTRY, CITY)

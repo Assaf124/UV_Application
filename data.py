@@ -15,6 +15,12 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.DEBUG)
 
 
+def load_locations(latitude, *args):
+
+
+    pass
+
+
 def get_location(latitude, *args):
     """
     This function returns a location name (usually a city) based on given latitude.
@@ -166,7 +172,16 @@ def get_cloud_coverage(latitude, longitude, token, *args):
 
 
 def parse_list(forecast_list, *args):
+    """
+    This function returns the ...
 
+    Args:
+        forecast_list:  TDB...
+
+    Returns:
+        index-1:    TBD...
+
+    """
     for index, item in enumerate(forecast_list):
         start_datetime_string = item.get('startTime')
         start_time_value = start_datetime_string.split('T')
@@ -339,6 +354,13 @@ def extract_minutes_from_timestamp(timestamp, flag):
         return None
 
 
+def get_sun_altitude():
+
+
+
+    pass
+
+
 if __name__ == '__main__':
 
     # Herzeliya
@@ -364,8 +386,3 @@ if __name__ == '__main__':
     # Beijing
     LAT = 39.9042
     LNG = 116.4074
-
-    # print(calculate_sun_angle(LAT, LNG, time.time(), 7200))
-
-    ttt = get_local_time(LAT, LNG)
-    print(ttt[2]*125)
