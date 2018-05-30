@@ -59,8 +59,8 @@ if __name__ == '__main__':
     LNG = 9.1901
 
     # Odesa
-    LAT = 46.4825
-    LNG = 30.7233
+    # LAT = 46.4825
+    # LNG = 30.7233
 
     # New York
     # LAT = 40.7128
@@ -70,30 +70,38 @@ if __name__ == '__main__':
     # LAT = 1.3521
     # LNG = 103.8198
 
-    location = 'uk/london'
-    method = 'GET'
-    url = f'https://www.timeanddate.com/sun/{location}'
-    dict_headers = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-                    'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'}
+    # location = 'uk/london'
+    # method = 'GET'
+    # url = f'https://www.timeanddate.com/sun/{location}'
+    # dict_headers = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    #                 'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'}
+    #
+    #
+    # http = urllib3.PoolManager()
+    # http_request = http.request(method, url, headers=dict_headers)
+    # LOGGER.info(f'Sent http request: {method}  {url}, {dict_headers}')
+    #
+    # # encoded_body = 'grant_type=client_credentials'
+    # # http_request = http.request(method, url, headers=dict_headers, body=encoded_body)
+    #
+    # reply = http_request.data.decode('utf-8')
 
+    temperature = ''
+    humidity = ''
+
+    APP_ID = 'a3562ce1'
+    APP_KEY = '3c9735afcc225ebc3e503c83c06f98be'
+    url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current humidity gt 16 includecurrent?' \
+          f'app_id={APP_ID}&app_key={APP_KEY}'
+    method = 'GET'
 
     http = urllib3.PoolManager()
-    http_request = http.request(method, url, headers=dict_headers)
-    LOGGER.info(f'Sent http request: {method}  {url}, {dict_headers}')
+    http_request = http.request(method, url)
 
-    # encoded_body = 'grant_type=client_credentials'
-    # http_request = http.request(method, url, headers=dict_headers, body=encoded_body)
+    reply = json.loads(http_request.data.decode('utf-8'))
+    LOGGER.info(f'Received forecast reply: {reply}')
 
-    reply = http_request.data.decode('utf-8')
-    LOGGER.info(f'Got reply: {reply}')
-
-    'Sun Altitude: </span><span id=sunalt>50.8°</span></p>'
-
-    # reply_split_1 = reply.split('<span id=sunalt>')
-    # reply_split_2 = reply_split_1[1].split('</span></p><p>')
-    # print(f'Sun altitude: {reply_split_2[0]}')
-
-
-
+    cloud_cover = reply['CurrentWeather']["cloudtotal_pct"]
+    print(cloud_cover)
 
 

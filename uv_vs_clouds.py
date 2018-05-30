@@ -41,12 +41,15 @@ for data_item in coordinates:
     LOGGER.info(f'Received uv risk values: {uv_risk}')
     LOGGER.info(f'Received Ozone values: {ozone}')
 
-    access_token = data.get_token_for_clouds_coverage()
-    LOGGER.info(f'Received access token for cloud coverage: {access_token}')
+    # access_token = data.get_token_for_clouds_coverage()
+    # LOGGER.info(f'Received access token for cloud coverage: {access_token}')
 
-    cloud_coverage, solar = data.get_cloud_coverage(LAT, LNG, access_token)
-    LOGGER.info(f'Received cloud coverage value: {cloud_coverage}')
-    LOGGER.info(f'Received Solar amount value: {solar}')
+    # cloud_coverage, solar = data.get_cloud_coverage(LAT, LNG, access_token)
+    # LOGGER.info(f'Received cloud coverage value: {cloud_coverage}')
+    # LOGGER.info(f'Received Solar amount value: {solar}')
+
+    cloud_coverage = data.get_cloud_coverage_new(LAT, LNG)
+    solar = 429
 
     # sun_angle = data.calculate_sun_angle(LAT, LNG, local_time_unix_format, time_offset)
     sun_altitude = data.get_sun_altitude(data_item["Main Place"], data_item["Place"])
@@ -55,4 +58,4 @@ for data_item in coordinates:
                               uv_risk[1], uv_risk[2], uv_risk[3], uv_risk[4], uv_risk[5],ozone, cloud_coverage,
                               solar, sun_altitude)
 
-    # print(current_local_time, uv_risk, cloud_coverage, solar, sun_angle)
+

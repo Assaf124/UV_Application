@@ -171,6 +171,47 @@ def get_cloud_coverage(latitude, longitude, token, *args):
         raise arg
 
 
+def get_cloud_coverage_new(latitude, longitude, *args):
+    """
+    This function returns the cloud coverage (based on  latitude and longitude)
+
+    Args:
+        latitude:   Integer. the latitude of the given location
+        longitude:  Integer. the longitude of the given location
+
+    Returns:
+        cloud_cover: Integer. cloud coverage value in % units
+
+    Raises:
+        Exception:     Raises an exception.
+    """
+
+    app_id = app_config.WEATHERUNLOCKED_APP_ID
+    app_key = app_config.WEATHERUNLOCKED_APP_KEY
+
+    url = f'http://api.weatherunlocked.com/api/trigger/{latitude},{longitude}/current humidity gt 0 includecurrent?' \
+          f'app_id={app_id}&app_key={app_key}'
+
+    method = 'GET'
+
+    try:
+        http = urllib3.PoolManager()
+        http_request = http.request(method, url)
+        LOGGER.info(f'Sent http request: {method}  {url}')
+
+        reply = json.loads(http_request.data.decode('utf-8'))
+        LOGGER.info(f'Received forecast reply: {reply}')
+
+        cloud_cover = reply['CurrentWeather']["cloudtotal_pct"]
+        LOGGER.info(f'Extracted cloud coverage value: {cloud_cover}')
+
+        return cloud_cover
+
+    except:
+        LOGGER.error(f'Got error')
+        return None
+
+
 def parse_list(forecast_list, *args):
     """
     This function returns the ...
