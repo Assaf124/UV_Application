@@ -70,26 +70,30 @@ if __name__ == '__main__':
     # LAT = 1.3521
     # LNG = 103.8198
 
-    # location = 'uk/london'
-    # method = 'GET'
-    # url = f'https://www.timeanddate.com/sun/{location}'
-    #
-    # http = urllib3.PoolManager()
-    # http_request = http.request(method, url)
-    #
-    # reply = http_request.data.decode('utf-8')
-    #
-    # 'Sun Altitude: </span><span id=sunalt>50.8°</span></p>'
-    #
+    location = 'uk/london'
+    method = 'GET'
+    url = f'https://www.timeanddate.com/sun/{location}'
+    dict_headers = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+                    'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'}
+
+
+    http = urllib3.PoolManager()
+    http_request = http.request(method, url, headers=dict_headers)
+    LOGGER.info(f'Sent http request: {method}  {url}, {dict_headers}')
+
+    # encoded_body = 'grant_type=client_credentials'
+    # http_request = http.request(method, url, headers=dict_headers, body=encoded_body)
+
+    reply = http_request.data.decode('utf-8')
+    LOGGER.info(f'Got reply: {reply}')
+
+    'Sun Altitude: </span><span id=sunalt>50.8°</span></p>'
+
     # reply_split_1 = reply.split('<span id=sunalt>')
     # reply_split_2 = reply_split_1[1].split('</span></p><p>')
     # print(f'Sun altitude: {reply_split_2[0]}')
 
-    coordinates = load_coordinates_new()
 
-    for item in coordinates:
-        LAT = item["lat"]
-        LNG = item["lon"]
-        COUNTRY = item["Main Place"]
-        CITY = item["Place"]
-        print(LAT, LNG, COUNTRY, CITY)
+
+
+

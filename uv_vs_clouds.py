@@ -25,17 +25,17 @@ csv.create_csv_file(CSV_FILE_DIR, CSV_FILE_NAME)
 
 # loading Latitude and Longitude coordinates
 coordinates = json_parser.load_coordinates()
-locations_list = data.load_locations()
 
-for pair in coordinates:
-    LAT = pair["lat"]
-    LNG = pair["lon"]
 
+for data_item in coordinates:
+    LAT = data_item["lat"]
+    LNG = data_item["lon"]
     LOGGER.info(f'** New loop cycle started for latitude: {LAT} and longitude: {LNG} **\n')
 
-    current_local_time, local_time_unix_format, time_offset = data.get_local_time(LAT, LNG)
+    location = data_item["Display Place"]
+    LOGGER.info(f'Location for given latitude and longitude: {location}')
 
-    location = data.get_location(LAT)
+    current_local_time, local_time_unix_format, time_offset = data.get_local_time(LAT, LNG)
 
     uv_risk, ozone = data.get_uv_risk(LAT, LNG)
     LOGGER.info(f'Received uv risk values: {uv_risk}')
@@ -48,10 +48,11 @@ for pair in coordinates:
     LOGGER.info(f'Received cloud coverage value: {cloud_coverage}')
     LOGGER.info(f'Received Solar amount value: {solar}')
 
-    sun_angle = data.calculate_sun_angle(LAT, LNG, local_time_unix_format, time_offset)
+    # sun_angle = data.calculate_sun_angle(LAT, LNG, local_time_unix_format, time_offset)
+    sun_altitude = data.get_sun_altitude(data_item["Main Place"], data_item["Place"])
 
     csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time, location, LAT, LNG, uv_risk[0],
                               uv_risk[1], uv_risk[2], uv_risk[3], uv_risk[4], uv_risk[5],ozone, cloud_coverage,
-                              solar, sun_angle)
+                              solar, sun_altitude)
 
     # print(current_local_time, uv_risk, cloud_coverage, solar, sun_angle)

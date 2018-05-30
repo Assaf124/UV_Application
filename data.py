@@ -354,11 +354,46 @@ def extract_minutes_from_timestamp(timestamp, flag):
         return None
 
 
-def get_sun_altitude():
+def get_sun_altitude(main_place, place, *args):
+    """
+    This function extracts the sun altitude value from  www.timeanddate.com site.
+    in order to do so, we first need to concatenate location string to the given url.
+    location string looks like: hungary/budapest so the full url becomes:
+    www.timeanddate.com/sun/hungary/budapest
 
+    Args:
+        main_place:               Integer. the latitude of the given location
+        Place:              Integer. the longitude of the given location
 
+    Returns:
+        sun_angle:  Integer. The sun actual angle in the sky.
 
-    pass
+    Raises:
+        Exception:     Raises an exception.
+    """
+
+    location = f'{main_place}/{place}'
+    method = 'GET'
+    url = f'https://www.timeanddate.com/sun/{location}'
+
+    try:
+        http = urllib3.PoolManager()
+        http_request = http.request(method, url)
+        LOGGER.info(f'Sent http request for sun altitude: {method}  {url}')
+
+        reply = http_request.data.decode('utf-8')
+        LOGGER.debug(f'Got reply from {url}: {reply}')
+
+        reply_split_1 = reply.split('<span id=sunalt>')
+        reply_split_2 = reply_split_1[1].split('</span></p><p>')
+        sun_altitude = reply_split_2[0]
+
+        LOGGER.info(f'Extracted sun altitude value from site: {sun_altitude}')
+        return sun_altitude
+
+    except:
+        LOGGER.error(f'Was unable to extract sun altitude value from site')
+        return None
 
 
 if __name__ == '__main__':
