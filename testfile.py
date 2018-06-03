@@ -86,22 +86,28 @@ if __name__ == '__main__':
     #
     # reply = http_request.data.decode('utf-8')
 
-    temperature = ''
-    humidity = ''
 
     APP_ID = 'a3562ce1'
     APP_KEY = '3c9735afcc225ebc3e503c83c06f98be'
-    url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current humidity gt 16 includecurrent?' \
+
+    # url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current humidity gt 16 includecurrent?' \
+    #       f'app_id={APP_ID}&app_key={APP_KEY}'
+
+    # url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current utctime?' \
+    #       f'app_id={APP_ID}&app_key={APP_KEY}'
+
+    url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current cloud gt 0 includecurrent?' \
           f'app_id={APP_ID}&app_key={APP_KEY}'
+
     method = 'GET'
 
     http = urllib3.PoolManager()
     http_request = http.request(method, url)
 
-    reply = json.loads(http_request.data.decode('utf-8'))
-    LOGGER.info(f'Received forecast reply: {reply}')
+    reply = http_request.data.decode('utf-8')
+    # reply = json.loads(http_request.data.decode('utf-8'))
+    print(reply)
+    # LOGGER.info(f'Received forecast reply: {reply}')
 
-    cloud_cover = reply['CurrentWeather']["cloudtotal_pct"]
-    print(cloud_cover)
-
-
+    # cloud_cover = reply['CurrentWeather']["cloudtotal_pct"]
+    # print(cloud_cover)

@@ -15,34 +15,6 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.DEBUG)
 
 
-def load_locations(latitude, *args):
-
-
-    pass
-
-
-def get_location(latitude, *args):
-    """
-    This function returns a location name (usually a city) based on given latitude.
-
-    Args:
-        latitude:   Integer. the latitude of the given location
-
-    Returns:
-        key:    A name of a location (City) taken from locations.json
-    """
-
-    location_dict = json_parser.load_locations()
-
-    for key, value in location_dict.items():
-        if value == latitude:
-            LOGGER.info(f'Found location for a given latitude: {key}')
-            return key
-
-    LOGGER.warning('Did not find location for given latitude')
-    return None
-
-
 def get_uv_risk(latitude, longitude, *args):
     """
     This function returns the uv risk which correspond to skin type 1 to 6
@@ -60,6 +32,8 @@ def get_uv_risk(latitude, longitude, *args):
         Exception:     Raises an exception.
     """
 
+    LOGGER.info(f'function: "get_uv_risk" was called')
+
     method = 'GET'
     header_name = app_config.OPENUV_HEADER
     token_value = app_config.OPENUV_TOKEN
@@ -69,8 +43,8 @@ def get_uv_risk(latitude, longitude, *args):
     try:
         http = urllib3.PoolManager()
 
+        LOGGER.info(f'Sending http request: {method}  {url}, {dict_headers}')
         http_request = http.request(method, url, headers=dict_headers)
-        LOGGER.info(f'Sent http request: {method}  {url}, {dict_headers}')
 
         reply = json.loads(http_request.data.decode('utf-8'))
         LOGGER.info(f'Got reply: {reply}')
@@ -113,8 +87,8 @@ def get_token_for_clouds_coverage(*args):
     try:
         http = urllib3.PoolManager()
 
+        LOGGER.info('Sending http request for token: {}  {}, {} {}'.format(method, url, dict_headers, encoded_body))
         http_request = http.request(method, url, headers=dict_headers, body=encoded_body)
-        LOGGER.info('Sent http request for token: {}  {}, {} {}'.format(method, url, dict_headers, encoded_body))
 
         reply = json.loads(http_request.data.decode('utf-8'))
         LOGGER.info('Received access token: {}'.format(reply['access_token']))
@@ -153,8 +127,8 @@ def get_cloud_coverage(latitude, longitude, token, *args):
     try:
         http = urllib3.PoolManager()
 
+        LOGGER.info('Sending http request: {}  {}, {}'.format(method, url, dict_headers))
         http_request = http.request(method, url, headers=dict_headers)
-        LOGGER.info('Sent http request: {}  {}, {}'.format(method, url, dict_headers))
 
         reply = json.loads(http_request.data.decode('utf-8'))
         LOGGER.info(f'Received forecast reply: {reply}')
@@ -186,18 +160,20 @@ def get_cloud_coverage_new(latitude, longitude, *args):
         Exception:     Raises an exception.
     """
 
+    LOGGER.info(f'function: "get_cloud_coverage_new" was called')
+
     app_id = app_config.WEATHERUNLOCKED_APP_ID
     app_key = app_config.WEATHERUNLOCKED_APP_KEY
 
-    url = f'http://api.weatherunlocked.com/api/trigger/{latitude},{longitude}/current humidity gt 0 includecurrent?' \
+    url = f'http://api.weatherunlocked.com/api/trigger/{latitude},{longitude}/current cloud gt 0 includecurrent?' \
           f'app_id={app_id}&app_key={app_key}'
 
     method = 'GET'
 
     try:
         http = urllib3.PoolManager()
+        LOGGER.info(f'Sending http request: {method}  {url}')
         http_request = http.request(method, url)
-        LOGGER.info(f'Sent http request: {method}  {url}')
 
         reply = json.loads(http_request.data.decode('utf-8'))
         LOGGER.info(f'Received forecast reply: {reply}')
@@ -263,8 +239,8 @@ def get_local_time(latitude, longitude, *args):
     try:
         http = urllib3.PoolManager()
 
+        LOGGER.info(f'Sending http request: {method} , {url}')
         http_request = http.request(method, url)
-        LOGGER.info(f'Sent http request: {method} , {url}')
 
         local_time = json.loads(http_request.data.decode('utf-8'))
         LOGGER.info(f'Received google time reply: {local_time}')
@@ -413,14 +389,16 @@ def get_sun_altitude(main_place, place, *args):
         Exception:     Raises an exception.
     """
 
+    LOGGER.info(f'function: "get_sun_altitude" was called')
+
     location = f'{main_place}/{place}'
     method = 'GET'
     url = f'https://www.timeanddate.com/sun/{location}'
 
     try:
         http = urllib3.PoolManager()
+        LOGGER.info(f'Sending http request for sun altitude: {method}  {url}')
         http_request = http.request(method, url)
-        LOGGER.info(f'Sent http request for sun altitude: {method}  {url}')
 
         reply = http_request.data.decode('utf-8')
         LOGGER.debug(f'Got reply from {url}: {reply}')

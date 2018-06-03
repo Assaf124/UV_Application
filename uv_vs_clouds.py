@@ -27,12 +27,12 @@ csv.create_csv_file(CSV_FILE_DIR, CSV_FILE_NAME)
 coordinates = json_parser.load_coordinates()
 
 
-for data_item in coordinates:
-    LAT = data_item["lat"]
-    LNG = data_item["lon"]
+for coordinate_item in coordinates:
+    LAT = coordinate_item["lat"]
+    LNG = coordinate_item["lon"]
     LOGGER.info(f'** New loop cycle started for latitude: {LAT} and longitude: {LNG} **\n')
 
-    location = data_item["Display Place"]
+    location = coordinate_item["Display Place"]
     LOGGER.info(f'Location for given latitude and longitude: {location}')
 
     current_local_time, local_time_unix_format, time_offset = data.get_local_time(LAT, LNG)
@@ -52,7 +52,7 @@ for data_item in coordinates:
     solar = 429
 
     # sun_angle = data.calculate_sun_angle(LAT, LNG, local_time_unix_format, time_offset)
-    sun_altitude = data.get_sun_altitude(data_item["Main Place"], data_item["Place"])
+    sun_altitude = data.get_sun_altitude(coordinate_item["Main Place"], coordinate_item["Place"])
 
     csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time, location, LAT, LNG, uv_risk[0],
                               uv_risk[1], uv_risk[2], uv_risk[3], uv_risk[4], uv_risk[5],ozone, cloud_coverage,
