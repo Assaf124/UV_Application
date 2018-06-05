@@ -119,6 +119,8 @@ if __name__ == '__main__':
     print(reply['forecasts'])
     print(reply['forecasts'][0]['period_end'])
     print(reply['forecasts'][0]['cloud_opacity'])
+    print(reply['forecasts'][0]['dni'])
+    print(reply['forecasts'][0]['dhi'])
 
 
     # LOGGER.info(f'Received forecast reply: {reply}')
