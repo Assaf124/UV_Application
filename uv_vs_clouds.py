@@ -53,13 +53,12 @@ for coordinate_item in coordinates:
     # solar = 429
 
     cloud_coverage, dni, dhi, ghi = data.get_combined_data_solcast(LAT, LNG)
-    solar = dni
 
     # sun_angle = data.calculate_sun_angle(LAT, LNG, local_time_unix_format, time_offset)
     sun_altitude = data.get_sun_altitude(coordinate_item["Main Place"], coordinate_item["Place"])
 
     csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time, location, LAT, LNG, uv_risk[0],
                               uv_risk[1], uv_risk[2], uv_risk[3], uv_risk[4], uv_risk[5],ozone, cloud_coverage,
-                              solar, sun_altitude)
+                              dni, dhi, ghi, sun_altitude)
 
 

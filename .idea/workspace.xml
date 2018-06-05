@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3044c4c6-69dd-4a0a-9579-cdcfc2f38622" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/assafa.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/assafa.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/data.py" afterPath="$PROJECT_DIR$/data.py" />
-      <change beforePath="$PROJECT_DIR$/testfile.py" afterPath="$PROJECT_DIR$/testfile.py" />
+      <change beforePath="$PROJECT_DIR$/csv.py" afterPath="$PROJECT_DIR$/csv.py" />
       <change beforePath="$PROJECT_DIR$/uv_vs_clouds.py" afterPath="$PROJECT_DIR$/uv_vs_clouds.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +28,8 @@
       <file leaf-file-name="uv_vs_clouds.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uv_vs_clouds.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="377">
+              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -42,8 +40,8 @@
       <file leaf-file-name="csv.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="47" />
+            <state relative-caret-position="310">
+              <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -136,11 +134,11 @@
         <option value="$PROJECT_DIR$/Sun.py" />
         <option value="$PROJECT_DIR$/locations.json" />
         <option value="$PROJECT_DIR$/coordinates.json" />
-        <option value="$PROJECT_DIR$/csv.py" />
         <option value="$PROJECT_DIR$/app_config.py" />
         <option value="$PROJECT_DIR$/testfile.py" />
         <option value="$PROJECT_DIR$/data.py" />
         <option value="$PROJECT_DIR$/uv_vs_clouds.py" />
+        <option value="$PROJECT_DIR$/csv.py" />
       </list>
     </option>
   </component>
@@ -565,16 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
@@ -607,10 +595,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/uv_vs_clouds.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="377">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
