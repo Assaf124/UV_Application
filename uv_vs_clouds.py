@@ -48,7 +48,8 @@ for coordinate_item in coordinates:
     # LOGGER.info(f'Received cloud coverage value: {cloud_coverage}')
     # LOGGER.info(f'Received Solar amount value: {solar}')
 
-    cloud_coverage = data.get_cloud_coverage_new(LAT, LNG)
+    # cloud_coverage = data.get_cloud_coverage_weatherunlocked(LAT, LNG)
+    cloud_coverage = data.get_cloud_coverage_solcast(LAT, LNG)
     solar = 429
 
     # sun_angle = data.calculate_sun_angle(LAT, LNG, local_time_unix_format, time_offset)

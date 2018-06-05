@@ -87,8 +87,18 @@ if __name__ == '__main__':
     # reply = http_request.data.decode('utf-8')
 
 
+    APP_ACCESS_KEY = 'FGc5t40NnH'
+
+    url = f'https://api.xmltime.com/astronomy?accesskey={APP_ACCESS_KEY}&expires=2018-06-04T14%3A08%3A49%2B00%3A00' \
+          f'&signature=6%2FIh4VRdLFDEVfibWYaCF3roya8%3D&version=2&object=sun&placeid=uk%2Flondon' \
+          f'&startdt=2018-06-04&types=current'
+
     APP_ID = 'a3562ce1'
     APP_KEY = '3c9735afcc225ebc3e503c83c06f98be'
+
+    API_KEY = app_config.SOLCAST_API_KEY
+    url = f'https://api.solcast.com.au/radiation/forecasts?latitude={LAT}&longitude={LNG}&api_key={API_KEY}&format=json'
+
 
     # url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current humidity gt 16 includecurrent?' \
     #       f'app_id={APP_ID}&app_key={APP_KEY}'
@@ -96,17 +106,21 @@ if __name__ == '__main__':
     # url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current utctime?' \
     #       f'app_id={APP_ID}&app_key={APP_KEY}'
 
-    url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current cloud gt 0 includecurrent?' \
-          f'app_id={APP_ID}&app_key={APP_KEY}'
+    # url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current cloud gt 0 includecurrent?' \
+    #       f'app_id={APP_ID}&app_key={APP_KEY}'
 
     method = 'GET'
 
     http = urllib3.PoolManager()
     http_request = http.request(method, url)
 
-    reply = http_request.data.decode('utf-8')
-    # reply = json.loads(http_request.data.decode('utf-8'))
-    print(reply)
+    # reply = http_request.data.decode('utf-8')
+    reply = json.loads(http_request.data.decode('utf-8'))
+    print(reply['forecasts'])
+    print(reply['forecasts'][0]['period_end'])
+    print(reply['forecasts'][0]['cloud_opacity'])
+
+
     # LOGGER.info(f'Received forecast reply: {reply}')
 
     # cloud_cover = reply['CurrentWeather']["cloudtotal_pct"]

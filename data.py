@@ -145,9 +145,10 @@ def get_cloud_coverage(latitude, longitude, token, *args):
         raise arg
 
 
-def get_cloud_coverage_new(latitude, longitude, *args):
+def get_cloud_coverage_weatherunlocked(latitude, longitude, *args):
     """
     This function returns the cloud coverage (based on  latitude and longitude)
+    See further details at:  https://developer.weatherunlocked.com/documentation/localweather
 
     Args:
         latitude:   Integer. the latitude of the given location
@@ -160,7 +161,7 @@ def get_cloud_coverage_new(latitude, longitude, *args):
         Exception:     Raises an exception.
     """
 
-    LOGGER.info(f'function: "get_cloud_coverage_new" was called')
+    LOGGER.info(f'function: "get_cloud_coverage_weatherunlocked" was called')
 
     app_id = app_config.WEATHERUNLOCKED_APP_ID
     app_key = app_config.WEATHERUNLOCKED_APP_KEY
@@ -183,9 +184,75 @@ def get_cloud_coverage_new(latitude, longitude, *args):
 
         return cloud_cover
 
-    except:
-        LOGGER.error(f'Got error')
+    except (Exception) as arg:
+        LOGGER.error(f'An error was fetched:\n{arg}')
         return None
+
+
+def get_cloud_coverage_solcast(latitude, longitude, *args):
+    """
+    This function returns the cloud coverage (based on  latitude and longitude)
+    See further details at:  https://solcast.com.au/api/docs/
+
+    Args:
+        latitude:   Integer. the latitude of the given location
+        longitude:  Integer. the longitude of the given location
+
+    Returns:
+        cloud_cover: Integer. cloud coverage value in % units
+
+    Raises:
+        Exception:     Raises an exception.
+    """
+
+    LOGGER.info(f'function: "get_cloud_coverage_solcast" was called')
+
+    app_key = app_config.SOLCAST_API_KEY
+
+    url = f'https://api.solcast.com.au/radiation/forecasts?latitude={latitude}&longitude={longitude}&' \
+          f'api_key={app_key}&format=json'
+
+    method = 'GET'
+
+    try:
+        http = urllib3.PoolManager()
+        LOGGER.info(f'Sending http request: {method}  {url}')
+        http_request = http.request(method, url)
+
+        reply = json.loads(http_request.data.decode('utf-8'))
+        LOGGER.info(f'Received cloud cover reply: {reply}')
+
+        # The 'reply['forecasts']' is a list. the first item of it (index 0) holds the current weather info.
+        cloud_cover = reply['forecasts'][0]['cloud_opacity']
+        LOGGER.info(f'Extracted cloud coverage value: {cloud_cover}')
+
+        return cloud_cover
+
+    except (Exception) as arg:
+        LOGGER.error(f'An error was fetched:\n{arg}')
+        return None
+
+
+def get_solar_flux_solcast(latitude, longitude, *args):
+    """
+    This function returns the solar flux value (based on  latitude and longitude)
+    See further details at:  https://solcast.com.au/api/docs/
+
+    Args:
+        latitude:   Integer. the latitude of the given location
+        longitude:  Integer. the longitude of the given location
+
+    Returns:
+        solar_flux: Integer. solar flux
+
+    Raises:
+        Exception:     Raises an exception.
+    """
+
+    LOGGER.info(f'function: "get_solar_flux_solcast" was called')
+
+    app_key = app_config.SOLCAST_API_KEY
+    return
 
 
 def parse_list(forecast_list, *args):
@@ -227,6 +294,8 @@ def get_local_time(latitude, longitude, *args):
     Raises:
         Exception:     Raises an exception.
     """
+
+    LOGGER.info(f'function: "get_local_time" was called')
 
     unix_time = time.time()
     LOGGER.info(f'Fetched Unix (Epoch) Time UTC: {unix_time}')

@@ -10,6 +10,8 @@ WEATHERUNLOCKED_APP_KEY = '3c9735afcc225ebc3e503c83c06f98be'
 NOAA_TOKEN = 'IErLDmdrwFDWwXGWagebjjYVlOSsvmqV'
 GOOGLE_API_KEY = 'AIzaSyDRZy0h1Tl5Q1CCctsjysXDt7itqS9-UJQ'
 
+SOLCAST_API_KEY = 'fJxPhN60I9rweds-KkfikmCHlYdNdgSI'
+
 APPLICATION_MAIN_PATH = r'C:\myDirectory\uvApplication'
 COORDINATES_DIR_NAME = 'Coordinates'
 COORDINATES_FILE_NAME = 'coordinates.json'
