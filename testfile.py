@@ -124,4 +124,14 @@ if __name__ == '__main__':
     # print(reply['forecasts'][0]['dhi'])
 
     timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%d_%H:%M:%S')
-    print(timestamp)
+
+    now = datetime.datetime.now()
+    # [now.day, now.month, now.year]
+    print(now)
+    print(now.day)
+    print(now.month)
+    print(now.year)
+    print(now.hour)
+    print(now.minute)
+    print(now.second)
+    print(now.microsecond)
