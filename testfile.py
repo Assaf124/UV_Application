@@ -109,21 +109,19 @@ if __name__ == '__main__':
     # url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current cloud gt 0 includecurrent?' \
     #       f'app_id={APP_ID}&app_key={APP_KEY}'
 
-    method = 'GET'
 
-    http = urllib3.PoolManager()
-    http_request = http.request(method, url)
+    # method = 'GET'
+    #
+    # http = urllib3.PoolManager()
+    # http_request = http.request(method, url)
+    #
+    # # reply = http_request.data.decode('utf-8')
+    # reply = json.loads(http_request.data.decode('utf-8'))
+    # print(reply['forecasts'])
+    # print(reply['forecasts'][0]['period_end'])
+    # print(reply['forecasts'][0]['cloud_opacity'])
+    # print(reply['forecasts'][0]['dni'])
+    # print(reply['forecasts'][0]['dhi'])
 
-    # reply = http_request.data.decode('utf-8')
-    reply = json.loads(http_request.data.decode('utf-8'))
-    print(reply['forecasts'])
-    print(reply['forecasts'][0]['period_end'])
-    print(reply['forecasts'][0]['cloud_opacity'])
-    print(reply['forecasts'][0]['dni'])
-    print(reply['forecasts'][0]['dhi'])
-
-
-    # LOGGER.info(f'Received forecast reply: {reply}')
-
-    # cloud_cover = reply['CurrentWeather']["cloudtotal_pct"]
-    # print(cloud_cover)
+    timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%d_%H:%M:%S')
+    print(timestamp)

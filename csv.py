@@ -1,6 +1,7 @@
 import os
 import logging
 import logger
+import datetime
 
 
 # logger.init_logger()
@@ -8,17 +9,36 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.DEBUG)
 
 
+def create_csv_file_new(csv_file_dir, csv_file_name, *args):
+
+    csv_file_name = 'results'
+
+    LOGGER.info(f'create_csv_file function was called with parameters: {csv_file_dir}, {csv_file_name}')
+    if not os.path.exists(csv_file_dir):
+        os.makedirs(csv_file_dir)
+
+    path = os.path.join(csv_file_dir, file_name)
+    file = open(path, "w")
+    file.write('Local Time, Location, Latitude, Longitude, st1, st2, st3, st4, st5, st6, Ozone (Dobson), Cloud Coverage (%), '
+               'DNI, DHI, GHI, Sun Altitude (Degree)\n')
+    file.close()
+    LOGGER.info('csv file was created successfully')
+
+    return
+
+
 def create_csv_file(csv_file_dir, csv_file_name, *args):
 
     LOGGER.info(f'create_csv_file function was called with parameters: {csv_file_dir}, {csv_file_name}')
+
     if not os.path.exists(csv_file_dir):
         os.makedirs(csv_file_dir)
 
     file_name = csv_file_name
     path = os.path.join(csv_file_dir, file_name)
     file = open(path, "w")
-    file.write('Local Time, Location, Latitude, Longitude, st1, st2, st3, st4, st5, st6, Ozone (Dobson), Cloud Coverage (%), '
-               'DNI, DHI, GHI, Sun Altitude (Degree)\n')
+    file.write('Local Time, Location, Latitude, Longitude, st1, st2, st3, st4, st5, st6, Ozone (Dobson), '
+               'Cloud Coverage (%), DNI, DHI, GHI, Sun Altitude (Degree)\n')
     file.close()
     LOGGER.info('csv file was created successfully')
 

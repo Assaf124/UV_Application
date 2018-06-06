@@ -14,9 +14,10 @@ LOGGER.setLevel(logging.DEBUG)
 LOGGER.info('************      Program Started      ************\n')
 
 
-# Setting the xls file and directory
+# Setting the csv file and directory
+timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%d__UTC%H-%M-%S')
 CSV_FILE_DIR = app_config.csv_files_dir
-CSV_FILE_NAME = app_config.CSV_FILE_NAME
+CSV_FILE_NAME = app_config.CSV_FILE_NAME + '__' + str(timestamp) + '.csv'
 csv.create_csv_file(CSV_FILE_DIR, CSV_FILE_NAME)
 
 
