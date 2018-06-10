@@ -1,0 +1,10 @@
+{"applications_info":[
+{"application_name":"Whatsapp", "google_play_link":"https://play.google.com/store/apps/details?id=com.whatsapp", "google_play_id":"com.whatsapp"}, 
+{"application_name":"Viber", "google_play_link":"https://play.google.com/store/apps/details?id=com.viber.voip", "google_play_id":"com.viber.voip"},
+{"application_name":"Telegram", "google_play_link":"https://play.google.com/store/apps/details?id=org.telegram.messenger", "google_play_id":"org.telegram.messenger"}, 
+{"application_name":"Skype", "google_play_link":"https://play.google.com/store/apps/details?id=com.skype.raider", "google_play_id":"com.skype.raider"},
+{"application_name":"Tango", "google_play_link":"https://play.google.com/store/apps/details?id=com.sgiggle.production", "google_play_id":"com.sgiggle.production"},
+{"application_name":"Zalo", "google_play_link":"https://play.google.com/store/apps/details?id=com.zing.zalo", "google_play_id":"com.zing.zalo"},
+{"application_name":"Facebook", "google_play_link":"https://play.google.com/store/apps/details?id=com.facebook.katana", "google_play_id":"com.facebook.katana"},
+{"application_name":"Facebook Messenger", "google_play_link":"https://play.google.com/store/apps/details?id=com.facebook.orca", "google_play_id":"com.facebook.orca"}
+]}
