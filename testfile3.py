@@ -1,6 +1,6 @@
 import os
 import random
-from random import randint
+# from random import randint
 from pathlib import Path
 
 
@@ -46,12 +46,12 @@ for item in cont:
 
     email = f'{first_name}.{last_name}@{email_cast_lots()}.com'
 
-    b_day = f'{randint(1, 28)}/{randint(1, 12)}/{randint(1980, 2000)}'
+    b_day = f'{random.randint(1, 28)}/{random.randint(1, 12)}/{random.randint(1980, 2000)}'
 
-    phone_number = f'+{randint(25, 952)} {randint(50, 99)} {randint(100, 999)} {randint(10, 99)}'
+    phone_number = f'+{random.randint(25, 952)} {random.randint(50, 99)} {random.randint(100, 999)} {random.randint(10, 99)}'
 
     address = f'{random.choice(["Stevens", "Hartford", "Brooksby", "Highland", "Bennett", "Stephenville", "Buckland", "Torringford", "Hackworth", "Haynes", "Mcfarland", "Parkhurst", "Timpany", "Lynnway"])} ' \
-              f'{random.choice(["St","Rd", "Avenue", "Way", "Blvd", "East", "West", "North"])} {randint(9, 499)}'
+              f'{random.choice(["St","Rd", "Avenue", "Way", "Blvd", "East", "West", "North"])} {random.randint(9, 499)}'
 
     organization = f'{random.choice(["Allegion", "AT&T", "CVS Health", "eBay", "Ford", "Gap" , "Intel", "Kellogg", "MetLife", "Microsoft", "Mylan", "Perrigo", "Qorvo", "SL Green Realty", "TripAdvisor", "Viacom", "Xerox", "Xylem", "Zoetis"])}'
 
@@ -60,3 +60,5 @@ for item in cont:
     website = f'www.facebook.com/{first_name}.{last_name}'
 
     print(f'{first_name} {last_name}, {first_name}, , {last_name},,,,,,,,,,,{b_day},,,,,,,,,,,,,,,,{email},,{phone_number},,{address},{address},,,,,,,,{organization},,{occupation},,,,,,,,{website}')
+
+

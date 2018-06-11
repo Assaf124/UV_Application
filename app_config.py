@@ -1,5 +1,8 @@
 import os
+import datetime
 
+
+timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%d__UTC%H-%M-%S')
 
 OPENUV_HEADER = 'x-access-token'
 OPENUV_TOKEN = '92096e5152c61f0d3f5c64a3e89fa55e'
@@ -22,7 +25,8 @@ LOCATIONS_FILE_PATH = os.path.join(APPLICATION_MAIN_PATH, COORDINATES_DIR_NAME, 
 CSV_DIR_NAME = 'csv_files'
 CSV_FILE_NAME = 'results'
 LOGS_DIR_NAME = 'Logging'
-LOG_FILE_NAME = 'program.log'
+LOG_FILE_NAME = f'log__{timestamp}.log'
+# LOG_FILE_NAME = 'program.log'
 LOG_FILE_PATH = os.path.join(APPLICATION_MAIN_PATH, LOGS_DIR_NAME, LOG_FILE_NAME)
 LOG_FILE_MODE = 'w'  # a = append , w = overwrite
 
