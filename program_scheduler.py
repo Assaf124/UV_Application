@@ -22,4 +22,6 @@ def my_scheduler():
 
 
 for i in range(10):
+    print(f'running cycle {i}')
     my_scheduler()
+    
