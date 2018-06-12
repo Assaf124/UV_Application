@@ -21,5 +21,5 @@ def my_scheduler():
     time.sleep(3540)
 
 
-for i in range(4):
+for i in range(10):
     my_scheduler()
