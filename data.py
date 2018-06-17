@@ -40,10 +40,12 @@ def get_uv_risk(latitude, longitude, *args):
     token_value = app_config.OPENUV_TOKEN
     dict_headers = {header_name: token_value}
 
+    radian = 57.295779513
+
     try:
         http = urllib3.PoolManager()
 
-        LOGGER.info(f'Sending http request: {method}  {url}, {dict_headers}')
+        LOGGER.info(f'Sending http request: {method}  {url} , {dict_headers}')
         http_request = http.request(method, url, headers=dict_headers)
 
         reply = json.loads(http_request.data.decode('utf-8'))
@@ -55,6 +57,10 @@ def get_uv_risk(latitude, longitude, *args):
 
         ozone_value = reply['result']['ozone']
         LOGGER.info(f'Returning Ozone value: {ozone_value}')
+
+        uv = reply['result']['uv']
+        sun_altitude = reply['result']['sun_info']['sun_position']['altitude'] * radian
+        LOGGER.info(f'Extracted also next info -> UV value: {uv} , Sun altitude: {sun_altitude} ')
 
         return uv_list, ozone_value
 
@@ -305,7 +311,7 @@ def get_combined_data_solcast(latitude, longitude, *args):
         Exception:     Raises an exception.
     """
 
-    LOGGER.info(f'function: "get_solar_flux_solcast" was called')
+    LOGGER.info(f'function: "get_combined_data_solcast" was called')
 
     app_key = app_config.SOLCAST_API_KEY
 

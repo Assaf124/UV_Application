@@ -71,69 +71,24 @@ if __name__ == '__main__':
     # LAT = 1.3521
     # LNG = 103.8198
 
-    # location = 'uk/london'
-    # method = 'GET'
-    # url = f'https://www.timeanddate.com/sun/{location}'
-    # dict_headers = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-    #                 'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'}
-    #
-    #
-    # http = urllib3.PoolManager()
-    # http_request = http.request(method, url, headers=dict_headers)
-    # LOGGER.info(f'Sent http request: {method}  {url}, {dict_headers}')
-    #
-    # # encoded_body = 'grant_type=client_credentials'
-    # # http_request = http.request(method, url, headers=dict_headers, body=encoded_body)
-    #
-    # reply = http_request.data.decode('utf-8')
+    latitude = LAT
+    longitude = LNG
 
 
-    APP_ACCESS_KEY = 'FGc5t40NnH'
+    method = 'GET'
+    url = f'http://api.openuv.io/api/v1/uv?lat={latitude}&lng={longitude}'
+    header_name = 'x-access-token'
+    token_value = '92096e5152c61f0d3f5c64a3e89fa55e'
+    dict_headers = {header_name: token_value}
 
-    url = f'https://api.xmltime.com/astronomy?accesskey={APP_ACCESS_KEY}&expires=2018-06-04T14%3A08%3A49%2B00%3A00' \
-          f'&signature=6%2FIh4VRdLFDEVfibWYaCF3roya8%3D&version=2&object=sun&placeid=uk%2Flondon' \
-          f'&startdt=2018-06-04&types=current'
+    radian = 57.295779513
 
-    APP_ID = 'a3562ce1'
-    APP_KEY = '3c9735afcc225ebc3e503c83c06f98be'
+    http = urllib3.PoolManager()
+    http_request = http.request(method, url, headers=dict_headers)
 
-    API_KEY = app_config.SOLCAST_API_KEY
-    url = f'https://api.solcast.com.au/radiation/forecasts?latitude={LAT}&longitude={LNG}&api_key={API_KEY}&format=json'
+    reply = json.loads(http_request.data.decode('utf-8'))
 
+    uv = reply['result']['uv']
+    sun_altitude = reply['result']['sun_info']['sun_position']['altitude'] * radian
 
-    # url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current humidity gt 16 includecurrent?' \
-    #       f'app_id={APP_ID}&app_key={APP_KEY}'
-
-    # url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current utctime?' \
-    #       f'app_id={APP_ID}&app_key={APP_KEY}'
-
-    # url = f'http://api.weatherunlocked.com/api/trigger/{LAT},{LNG}/current cloud gt 0 includecurrent?' \
-    #       f'app_id={APP_ID}&app_key={APP_KEY}'
-
-
-    # method = 'GET'
-    #
-    # http = urllib3.PoolManager()
-    # http_request = http.request(method, url)
-    #
-    # # reply = http_request.data.decode('utf-8')
-    # reply = json.loads(http_request.data.decode('utf-8'))
-    # print(reply['forecasts'])
-    # print(reply['forecasts'][0]['period_end'])
-    # print(reply['forecasts'][0]['cloud_opacity'])
-    # print(reply['forecasts'][0]['dni'])
-    # print(reply['forecasts'][0]['dhi'])
-
-    timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%d_%H:%M:%S')
-
-    # now = datetime.datetime.now()
-    # # [now.day, now.month, now.year]
-    # print(now)
-    # print(now.day)
-    # print(now.month)
-    # print(now.year)
-    # print(now.hour)
-    # print(now.minute)
-    # print(now.second)
-    # print(now.microsecond)
-
+    print(f'{uv}  {sun_altitude}')

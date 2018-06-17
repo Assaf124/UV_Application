@@ -15,13 +15,15 @@ def run_my_code():
     print(f'{timestamp}:  code execution ended...')
 
 
-def my_scheduler():
+def my_scheduler(index):
     scheduler.enter(0, 1, run_my_code, ())
     scheduler.run()
+    print(f'Finished cycle {index}')
     time.sleep(3540)
 
 
-for i in range(10):
-    print(f'running cycle {i}')
-    my_scheduler()
-    
+for day in range(7):
+    for i in range(11):
+        my_scheduler(i)
+
+    time.sleep(46800)
