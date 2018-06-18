@@ -38,8 +38,9 @@ for coordinate_item in coordinates:
 
     current_local_time, local_time_unix_format, time_offset = data.get_local_time(LAT, LNG)
 
-    uv_risk, ozone = data.get_uv_risk(LAT, LNG)
-    LOGGER.info(f'Received uv risk values: {uv_risk}')
+    uv_risk, ozone, uv_index = data.get_uv_risk(LAT, LNG)
+    LOGGER.info(f'Received safe exposure time values: {uv_risk}')
+    LOGGER.info(f'Received UV Index values: {uv_index}')
     LOGGER.info(f'Received Ozone values: {ozone}')
 
     # access_token = data.get_token_for_clouds_coverage()
@@ -57,7 +58,7 @@ for coordinate_item in coordinates:
     sun_altitude = data.get_sun_altitude(coordinate_item["Main Place"], coordinate_item["Place"])
 
     csv.add_entry_to_csv_file(CSV_FILE_DIR, CSV_FILE_NAME, current_local_time, location, LAT, LNG, uv_risk[0],
-                              uv_risk[1], uv_risk[2], uv_risk[3], uv_risk[4], uv_risk[5],ozone, cloud_coverage,
-                              dni, dhi, ghi, sun_altitude)
+                              uv_risk[1], uv_risk[2], uv_risk[3], uv_risk[4], uv_risk[5], uv_index, ozone,
+                              cloud_coverage, dni, dhi, ghi, sun_altitude)
 
 

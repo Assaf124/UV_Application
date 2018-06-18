@@ -24,9 +24,6 @@ def my_scheduler(index):
 
 if __name__ == '__main__':
 
-    print('Started...')
-    time.sleep(43200)
-
     for day in range(7):
         for i in range(12):
             my_scheduler(i)

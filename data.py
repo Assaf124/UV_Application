@@ -26,7 +26,8 @@ def get_uv_risk(latitude, longitude, *args):
 
     Returns:
         uv_list:        List of integers. Each Integer is a UV exposure time in accordance with skin type
-        ozone_value:    Integer. describes the Ozone in Dobson units
+        ozone_value:    Float. describes the Ozone in Dobson units
+        uv_index:       Float. UV Index value (see also here:  https://en.wikipedia.org/wiki/Ultraviolet_index )
 
     Raises:
         Exception:     Raises an exception.
@@ -53,16 +54,18 @@ def get_uv_risk(latitude, longitude, *args):
 
         uv_dict = reply['result']['safe_exposure_time']
         uv_list = list(uv_dict.values())
-        LOGGER.info(f'Returning U.V values: {uv_list}')
+        LOGGER.info(f'Returning safe exposure time values: {uv_list}')
+
+        uv_index = reply['result']['uv']
+        LOGGER.info(f'Returning UV Index value: {uv_index}')
 
         ozone_value = reply['result']['ozone']
         LOGGER.info(f'Returning Ozone value: {ozone_value}')
 
-        uv = reply['result']['uv']
         sun_altitude = reply['result']['sun_info']['sun_position']['altitude'] * radian
-        LOGGER.info(f'Extracted also next info -> UV value: {uv} , Sun altitude: {sun_altitude} ')
+        LOGGER.info(f'Extracted also next info -> Sun altitude: {sun_altitude} ')
 
-        return uv_list, ozone_value
+        return uv_list, ozone_value, uv_index
 
     except Exception as arg:
         LOGGER.error(f'An error was fetched:\n{arg}')
