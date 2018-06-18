@@ -18,7 +18,7 @@ def create_csv_file(csv_file_dir, csv_file_name, *args):
     file_name = csv_file_name
     path = os.path.join(csv_file_dir, file_name)
     file = open(path, "w")
-    file.write('Local Time, Location, Latitude, Longitude, S.T1, S.T2, S.T3, S.T4, S.T5, S.T6, UV index, '
+    file.write('Local Time, Location, Latitude, Longitude, S.T1, S.T2, S.T3, S.T4, S.T5, S.T6, UV Index, '
                'Ozone (Dobson), Cloud Coverage (%), DNI (W/m^2), DHI (W/m^2), GHI (W/m^2), Sun Altitude (Degree)\n')
     file.close()
     LOGGER.info('csv file was created successfully')

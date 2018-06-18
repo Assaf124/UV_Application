@@ -54,18 +54,18 @@ def get_uv_risk(latitude, longitude, *args):
 
         uv_dict = reply['result']['safe_exposure_time']
         uv_list = list(uv_dict.values())
-        LOGGER.info(f'Returning safe exposure time values: {uv_list}')
+        LOGGER.info(f'Extracted safe exposure time values: {uv_list}')
 
         uv_index = reply['result']['uv']
-        LOGGER.info(f'Returning UV Index value: {uv_index}')
+        LOGGER.info(f'Extracted UV Index value: {uv_index}')
 
         ozone_value = reply['result']['ozone']
-        LOGGER.info(f'Returning Ozone value: {ozone_value}')
+        LOGGER.info(f'Extracted Ozone value: {ozone_value}')
 
-        sun_altitude = reply['result']['sun_info']['sun_position']['altitude'] * radian
-        LOGGER.info(f'Extracted also next info -> Sun altitude: {sun_altitude} ')
+        sun_altitude = round(reply['result']['sun_info']['sun_position']['altitude'] * radian, 2)
+        LOGGER.info(f'Extracted Sun altitude value: {sun_altitude} ')
 
-        return uv_list, ozone_value, uv_index
+        return uv_list, ozone_value, uv_index, sun_altitude
 
     except Exception as arg:
         LOGGER.error(f'An error was fetched:\n{arg}')

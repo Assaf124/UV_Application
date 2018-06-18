@@ -89,6 +89,7 @@ if __name__ == '__main__':
     reply = json.loads(http_request.data.decode('utf-8'))
 
     uv = reply['result']['uv']
-    sun_altitude = reply['result']['sun_info']['sun_position']['altitude'] * radian
+    sun_altitude = round(reply['result']['sun_info']['sun_position']['altitude'] * radian, 2)
+    sun_alt = round(sun_altitude, 2)
 
-    print(f'{uv}  {sun_altitude}')
+    print(f'{uv}  {sun_altitude} {sun_alt}')
