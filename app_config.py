@@ -7,6 +7,8 @@ timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%d__UTC%H-%M-%S')
 OPENUV_HEADER = 'x-access-token'
 OPENUV_TOKEN = '92096e5152c61f0d3f5c64a3e89fa55e'
 
+OPENWEATHERMAP_KEY = '8dcb60769e9be3d565de9d03f1cae34f'
+
 WEATHERUNLOCKED_APP_ID = 'a3562ce1'
 WEATHERUNLOCKED_APP_KEY = '3c9735afcc225ebc3e503c83c06f98be'
 

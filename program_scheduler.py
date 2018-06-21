@@ -22,10 +22,22 @@ def my_scheduler(index):
     time.sleep(3540)
 
 
+def night_sleep(hours):
+    for hour in range(hours):
+        timestamp1 = datetime.datetime.utcnow().strftime('%Y-%m-%d__UTC%H-%M-%S')
+        print(f'took timestamp at:  {timestamp1}')
+        time.sleep(3600)
+
+
 if __name__ == '__main__':
+
+    timestamp = datetime.datetime.utcnow().strftime('%Y-%m-%d__UTC%H-%M-%S')
+    print(f'Started at {timestamp} ... ')
+
+    night_sleep(12)
 
     for day in range(7):
         for i in range(12):
             my_scheduler(i)
 
-        time.sleep(43200)
+        night_sleep(12)

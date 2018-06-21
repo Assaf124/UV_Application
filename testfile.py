@@ -41,15 +41,6 @@ def get_noaa_data(*args):
         raise arg
 
 
-def load_coordinates_new(*args):
-
-    json_path = app_config.ALT_COORDINATES_FILE_PATH
-    json_data = json.load(open(json_path))
-    # LOGGER.info(f'Loaded coordinates data from file: {json_data}')
-
-    return json_data['coordinates']
-
-
 if __name__ == '__main__':
     # Herzeliya
     LAT = 32.15922
@@ -68,28 +59,45 @@ if __name__ == '__main__':
     # LNG = -74.0061
 
     # Singapore
-    # LAT = 1.3521
-    # LNG = 103.8198
+    LAT = 1.3521
+    LNG = 103.8198
+
+    # Oslo
+    # LAT = 59.9139
+    # LNG = 10.7522
+    #
+    # # Mumbai
+    # LAT = 19.0760
+    # LNG = 72.8777
+    #
+    # # Bangkok
+    # LAT = 13.7563
+    # LNG = 100.5018
 
     latitude = LAT
     longitude = LNG
 
+    # appid = app_config.OPENWEATHERMAP_KEY
+    # method = 'GET'
+    # url = f'http://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LNG}&appid={appid}'
+    #
+    # http = urllib3.PoolManager()
+    # http_request = http.request(method, url)
+    #
+    # reply = json.loads(http_request.data.decode('utf-8'))
+    # print(reply)
+
+
+    app_id = app_config.WEATHERUNLOCKED_APP_ID
+    app_key = app_config.WEATHERUNLOCKED_APP_KEY
+
+    url = f'http://api.weatherunlocked.com/api/trigger/{latitude},{longitude}/current cloud gt 0 includecurrent?' \
+          f'app_id={app_id}&app_key={app_key}'
 
     method = 'GET'
-    url = f'http://api.openuv.io/api/v1/uv?lat={latitude}&lng={longitude}'
-    header_name = 'x-access-token'
-    token_value = '92096e5152c61f0d3f5c64a3e89fa55e'
-    dict_headers = {header_name: token_value}
-
-    radian = 57.295779513
 
     http = urllib3.PoolManager()
-    http_request = http.request(method, url, headers=dict_headers)
-
+    http_request = http.request(method, url)
     reply = json.loads(http_request.data.decode('utf-8'))
+    print(reply['CurrentWeather'])
 
-    uv = reply['result']['uv']
-    sun_altitude = round(reply['result']['sun_info']['sun_position']['altitude'] * radian, 2)
-    sun_alt = round(sun_altitude, 2)
-
-    print(f'{uv}  {sun_altitude} {sun_alt}')

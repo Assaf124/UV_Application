@@ -8,6 +8,7 @@ import logger
 import math
 import json_parser
 from Sun import Sun
+from bs4 import BeautifulSoup
 
 
 # logger.init_logger()
@@ -345,6 +346,50 @@ def get_combined_data_solcast(latitude, longitude, *args):
         LOGGER.info(f'Extracted Global Horizontal Irradiance value: {ghi}')
 
         return cloud_cover, dni, dhi, ghi
+
+    except (Exception) as arg:
+        LOGGER.error(f'An error was fetched:\n{arg}')
+        return None
+
+
+def get_precipitation_forecast(weatheronlineurl, *args):
+    """
+    This function returns the precipitation forecast for specific location
+
+    Args:
+        location:   String.
+
+    Returns:
+        precipitation:  Integer.
+
+    Raises:
+        Exception:     Raises an exception.
+    """
+
+    LOGGER.info(f'function: "get_precipitation_forecast" was called')
+
+    url = f'https://www.worldweatheronline.com/{weatheronlineurl}?wwo_r=srch'
+    method = 'GET'
+
+    try:
+        # Fetch the page
+        http = urllib3.PoolManager()
+        LOGGER.info(f'Sending http request: {method}  {url}')
+        http_request = http.request(method, url)
+
+        response = http_request.data.decode('utf-8')
+        LOGGER.debug(f'Received reply: {response}')
+
+        # Extract precipitation info from page
+        soup = BeautifulSoup(response, 'html.parser')
+        weather_table = soup.find('table', attrs={'class': 'table'})
+        row = weather_table.findAll('tr')
+        cell = row[0].findAll('td')
+        cell_string = str(cell[1].text)
+        precipitation = cell_string.split(' ')
+        LOGGER.info(f'Extracted precipitation forecast: {precipitation}')
+
+        return precipitation
 
     except (Exception) as arg:
         LOGGER.error(f'An error was fetched:\n{arg}')
