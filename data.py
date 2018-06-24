@@ -378,6 +378,7 @@ def get_precipitation_forecast(weatheronlineurl, *args):
         http_request = http.request(method, url)
 
         response = http_request.data.decode('utf-8')
+        LOGGER.info(f'Received full page reply')
         LOGGER.debug(f'Received reply: {response}')
 
         # Extract precipitation info from page
@@ -387,9 +388,9 @@ def get_precipitation_forecast(weatheronlineurl, *args):
         cell = row[0].findAll('td')
         cell_string = str(cell[1].text)
         precipitation = cell_string.split(' ')
-        LOGGER.info(f'Extracted precipitation forecast: {precipitation}')
+        LOGGER.info(f'Extracted precipitation forecast: {precipitation[0]}%')
 
-        return precipitation
+        return precipitation[0]
 
     except (Exception) as arg:
         LOGGER.error(f'An error was fetched:\n{arg}')

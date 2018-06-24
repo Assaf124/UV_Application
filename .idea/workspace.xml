@@ -5,64 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3044c4c6-69dd-4a0a-9579-cdcfc2f38622" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC08-46-54.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC09-30-07.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC09-31-25.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC09-37-39.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC09-46-48.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC10-16-29.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC10-19-07.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC10-22-27.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC10-23-38.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC10-24-48.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC10-46-39.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC11-46-30.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-18__UTC12-46-19.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-19__UTC07-33-04.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-19__UTC10-15-51.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-19__UTC11-15-43.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-19__UTC12-23-10.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-19__UTC13-22-11.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-19__UTC14-22-09.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-19__UTC15-21-59.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-19__UTC16-21-49.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-20__UTC07-38-28.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-20__UTC08-38-18.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-20__UTC09-38-06.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-20__UTC10-37-52.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-20__UTC11-16-07.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-20__UTC12-16-00.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logging/log__2018-06-20__UTC13-15-56.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-18__UTC08-46-54.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-18__UTC09-46-48.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-18__UTC10-46-39.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-18__UTC11-46-30.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-18__UTC12-46-20.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-19__UTC07-33-04.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-19__UTC10-15-51.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-19__UTC11-15-43.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-19__UTC13-22-11.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-19__UTC14-22-10.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-19__UTC15-21-59.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-19__UTC16-21-49.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-20__UTC07-38-29.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-20__UTC08-38-19.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-20__UTC09-38-07.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-20__UTC10-37-52.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-20__UTC11-16-07.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-20__UTC12-16-01.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv_files/results__2018-06-20__UTC13-15-56.csv" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/assafa.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/assafa.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Coordinates/coordinates.json" afterPath="$PROJECT_DIR$/Coordinates/coordinates.json" />
-      <change beforePath="$PROJECT_DIR$/Logging/program.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app_config.py" afterPath="$PROJECT_DIR$/app_config.py" />
-      <change beforePath="$PROJECT_DIR$/csv.py" afterPath="$PROJECT_DIR$/csv.py" />
       <change beforePath="$PROJECT_DIR$/data.py" afterPath="$PROJECT_DIR$/data.py" />
-      <change beforePath="$PROJECT_DIR$/program_scheduler.py" afterPath="$PROJECT_DIR$/program_scheduler.py" />
-      <change beforePath="$PROJECT_DIR$/testfile.py" afterPath="$PROJECT_DIR$/testfile.py" />
-      <change beforePath="$PROJECT_DIR$/testfile2.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/testfile3.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/uv_vs_clouds.py" afterPath="$PROJECT_DIR$/uv_vs_clouds.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,8 +33,8 @@
       <file leaf-file-name="uv_vs_clouds.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uv_vs_clouds.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-154">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -101,8 +45,8 @@
       <file leaf-file-name="csv.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="305">
+              <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -122,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="389" column="2" lean-forward="false" selection-start-line="389" selection-start-column="2" selection-end-line="389" selection-end-column="2" />
+            <state relative-caret-position="204">
+              <caret line="382" column="0" lean-forward="true" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
                 <element signature="e#327#992#1" expanded="false" />
@@ -142,15 +86,15 @@
                 <element signature="e#8198#8604#1" expanded="false" />
                 <element signature="e#9974#10576#1" expanded="false" />
                 <element signature="e#11960#12189#1" expanded="false" />
-                <element signature="e#13238#13678#0" expanded="false" />
-                <element signature="e#13238#13367#1" expanded="false" />
-                <element signature="e#13733#14520#1" expanded="false" />
-                <element signature="e#15790#16530#0" expanded="false" />
-                <element signature="e#15790#16205#1" expanded="false" />
-                <element signature="e#16627#19264#0" expanded="false" />
-                <element signature="e#16627#17126#1" expanded="false" />
-                <element signature="e#19324#19792#0" expanded="false" />
-                <element signature="e#19847#20440#1" expanded="false" />
+                <element signature="e#13294#13734#0" expanded="false" />
+                <element signature="e#13294#13423#1" expanded="false" />
+                <element signature="e#13789#14576#1" expanded="false" />
+                <element signature="e#15846#16586#0" expanded="false" />
+                <element signature="e#15846#16261#1" expanded="false" />
+                <element signature="e#16683#19320#0" expanded="false" />
+                <element signature="e#16683#17182#1" expanded="false" />
+                <element signature="e#19380#19848#0" expanded="false" />
+                <element signature="e#19903#20496#1" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -168,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="program_scheduler.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="program_scheduler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program_scheduler.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -216,18 +160,17 @@
         <option value="$PROJECT_DIR$/app_config.py" />
         <option value="$PROJECT_DIR$/testfile.py" />
         <option value="$PROJECT_DIR$/Coordinates/coordinates.json" />
-        <option value="$PROJECT_DIR$/uv_vs_clouds.py" />
         <option value="$PROJECT_DIR$/csv.py" />
-        <option value="$PROJECT_DIR$/data.py" />
         <option value="$PROJECT_DIR$/program_scheduler.py" />
+        <option value="$PROJECT_DIR$/uv_vs_clouds.py" />
+        <option value="$PROJECT_DIR$/data.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-6" />
+    <option name="width" value="974" />
+    <option name="height" value="527" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -275,7 +218,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.program_scheduler">
+  <component name="RunManager" selected="Python.uv_vs_clouds">
+    <configuration name="data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="UV_Application" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="program_scheduler" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -307,24 +268,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="UV_Application" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testfile.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="testfile3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="UV_Application" />
-      <option name="SCRIPT_NAME" value="C:\myDirectory\uvApplication\UV_Application\CreateGoogleContacts.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -369,17 +312,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.uv_vs_clouds" />
       <item index="1" class="java.lang.String" itemvalue="Python.testfile" />
-      <item index="2" class="java.lang.String" itemvalue="Python.testfile3" />
-      <item index="3" class="java.lang.String" itemvalue="Python.testfile4" />
-      <item index="4" class="java.lang.String" itemvalue="Python.program_scheduler" />
+      <item index="2" class="java.lang.String" itemvalue="Python.testfile4" />
+      <item index="3" class="java.lang.String" itemvalue="Python.program_scheduler" />
+      <item index="4" class="java.lang.String" itemvalue="Python.data" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.program_scheduler" />
-        <item index="1" class="java.lang.String" itemvalue="Python.uv_vs_clouds" />
-        <item index="2" class="java.lang.String" itemvalue="Python.testfile" />
-        <item index="3" class="java.lang.String" itemvalue="Python.testfile4" />
-        <item index="4" class="java.lang.String" itemvalue="Python.testfile3" />
+        <item index="0" class="java.lang.String" itemvalue="Python.uv_vs_clouds" />
+        <item index="1" class="java.lang.String" itemvalue="Python.data" />
+        <item index="2" class="java.lang.String" itemvalue="Python.program_scheduler" />
+        <item index="3" class="java.lang.String" itemvalue="Python.testfile" />
+        <item index="4" class="java.lang.String" itemvalue="Python.testfile4" />
       </list>
     </recent_temporary>
   </component>
@@ -400,15 +343,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1552" height="840" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20677084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25846353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33874458" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4420904" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -498,15 +441,15 @@
             <element signature="e#8198#8604#1" expanded="false" />
             <element signature="e#9974#10576#1" expanded="false" />
             <element signature="e#11960#12189#1" expanded="false" />
-            <element signature="e#13238#13678#0" expanded="false" />
-            <element signature="e#13238#13367#1" expanded="false" />
-            <element signature="e#13733#14520#1" expanded="false" />
-            <element signature="e#15790#16530#0" expanded="false" />
-            <element signature="e#15790#16205#1" expanded="false" />
-            <element signature="e#16627#19264#0" expanded="false" />
-            <element signature="e#16627#17126#1" expanded="false" />
-            <element signature="e#19324#19792#0" expanded="false" />
-            <element signature="e#19847#20440#1" expanded="false" />
+            <element signature="e#13294#13734#0" expanded="false" />
+            <element signature="e#13294#13423#1" expanded="false" />
+            <element signature="e#13789#14576#1" expanded="false" />
+            <element signature="e#15846#16586#0" expanded="false" />
+            <element signature="e#15846#16261#1" expanded="false" />
+            <element signature="e#16683#19320#0" expanded="false" />
+            <element signature="e#16683#17182#1" expanded="false" />
+            <element signature="e#19380#19848#0" expanded="false" />
+            <element signature="e#19903#20496#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -597,15 +540,15 @@
             <element signature="e#8198#8604#1" expanded="false" />
             <element signature="e#9974#10576#1" expanded="false" />
             <element signature="e#11960#12189#1" expanded="false" />
-            <element signature="e#13238#13678#0" expanded="false" />
-            <element signature="e#13238#13367#1" expanded="false" />
-            <element signature="e#13733#14520#1" expanded="false" />
-            <element signature="e#15790#16530#0" expanded="false" />
-            <element signature="e#15790#16205#1" expanded="false" />
-            <element signature="e#16627#19264#0" expanded="false" />
-            <element signature="e#16627#17126#1" expanded="false" />
-            <element signature="e#19324#19792#0" expanded="false" />
-            <element signature="e#19847#20440#1" expanded="false" />
+            <element signature="e#13294#13734#0" expanded="false" />
+            <element signature="e#13294#13423#1" expanded="false" />
+            <element signature="e#13789#14576#1" expanded="false" />
+            <element signature="e#15846#16586#0" expanded="false" />
+            <element signature="e#15846#16261#1" expanded="false" />
+            <element signature="e#16683#19320#0" expanded="false" />
+            <element signature="e#16683#17182#1" expanded="false" />
+            <element signature="e#19380#19848#0" expanded="false" />
+            <element signature="e#19903#20496#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -716,15 +659,15 @@
             <element signature="e#8198#8604#1" expanded="false" />
             <element signature="e#9974#10576#1" expanded="false" />
             <element signature="e#11960#12189#1" expanded="false" />
-            <element signature="e#13238#13678#0" expanded="false" />
-            <element signature="e#13238#13367#1" expanded="false" />
-            <element signature="e#13733#14520#1" expanded="false" />
-            <element signature="e#15790#16530#0" expanded="false" />
-            <element signature="e#15790#16205#1" expanded="false" />
-            <element signature="e#16627#19264#0" expanded="false" />
-            <element signature="e#16627#17126#1" expanded="false" />
-            <element signature="e#19324#19792#0" expanded="false" />
-            <element signature="e#19847#20440#1" expanded="false" />
+            <element signature="e#13294#13734#0" expanded="false" />
+            <element signature="e#13294#13423#1" expanded="false" />
+            <element signature="e#13789#14576#1" expanded="false" />
+            <element signature="e#15846#16586#0" expanded="false" />
+            <element signature="e#15846#16261#1" expanded="false" />
+            <element signature="e#16683#19320#0" expanded="false" />
+            <element signature="e#16683#17182#1" expanded="false" />
+            <element signature="e#19380#19848#0" expanded="false" />
+            <element signature="e#19903#20496#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -805,15 +748,15 @@
             <element signature="e#8198#8604#1" expanded="false" />
             <element signature="e#9974#10576#1" expanded="false" />
             <element signature="e#11960#12189#1" expanded="false" />
-            <element signature="e#13238#13678#0" expanded="false" />
-            <element signature="e#13238#13367#1" expanded="false" />
-            <element signature="e#13733#14520#1" expanded="false" />
-            <element signature="e#15790#16530#0" expanded="false" />
-            <element signature="e#15790#16205#1" expanded="false" />
-            <element signature="e#16627#19264#0" expanded="false" />
-            <element signature="e#16627#17126#1" expanded="false" />
-            <element signature="e#19324#19792#0" expanded="false" />
-            <element signature="e#19847#20440#1" expanded="false" />
+            <element signature="e#13294#13734#0" expanded="false" />
+            <element signature="e#13294#13423#1" expanded="false" />
+            <element signature="e#13789#14576#1" expanded="false" />
+            <element signature="e#15846#16586#0" expanded="false" />
+            <element signature="e#15846#16261#1" expanded="false" />
+            <element signature="e#16683#19320#0" expanded="false" />
+            <element signature="e#16683#17182#1" expanded="false" />
+            <element signature="e#19380#19848#0" expanded="false" />
+            <element signature="e#19903#20496#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -917,20 +860,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program_scheduler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/csv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="305">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/uv_vs_clouds.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="389" column="2" lean-forward="false" selection-start-line="389" selection-start-column="2" selection-end-line="389" selection-end-column="2" />
+        <state relative-caret-position="204">
+          <caret line="382" column="0" lean-forward="true" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
             <element signature="e#327#992#1" expanded="false" />
@@ -946,45 +919,15 @@
             <element signature="e#8198#8604#1" expanded="false" />
             <element signature="e#9974#10576#1" expanded="false" />
             <element signature="e#11960#12189#1" expanded="false" />
-            <element signature="e#13238#13678#0" expanded="false" />
-            <element signature="e#13238#13367#1" expanded="false" />
-            <element signature="e#13733#14520#1" expanded="false" />
-            <element signature="e#15790#16530#0" expanded="false" />
-            <element signature="e#15790#16205#1" expanded="false" />
-            <element signature="e#16627#19264#0" expanded="false" />
-            <element signature="e#16627#17126#1" expanded="false" />
-            <element signature="e#19324#19792#0" expanded="false" />
-            <element signature="e#19847#20440#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uv_vs_clouds.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/program_scheduler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#13294#13734#0" expanded="false" />
+            <element signature="e#13294#13423#1" expanded="false" />
+            <element signature="e#13789#14576#1" expanded="false" />
+            <element signature="e#15846#16586#0" expanded="false" />
+            <element signature="e#15846#16261#1" expanded="false" />
+            <element signature="e#16683#19320#0" expanded="false" />
+            <element signature="e#16683#17182#1" expanded="false" />
+            <element signature="e#19380#19848#0" expanded="false" />
+            <element signature="e#19903#20496#1" expanded="false" />
           </folding>
         </state>
       </provider>
