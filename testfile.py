@@ -100,4 +100,5 @@ if __name__ == '__main__':
     http_request = http.request(method, url)
     reply = json.loads(http_request.data.decode('utf-8'))
     print(reply['CurrentWeather'])
+    print('Done')
 
