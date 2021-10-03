@@ -3,6 +3,7 @@ import logging
 import logger
 import urllib3
 import json
+import pytest
 import datetime
 import data
 import csv
